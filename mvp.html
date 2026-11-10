@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to start with Claude Code and build your MVP · Nicolás Martelli</title>
+<meta name="description" content="From idea to a live link in an afternoon: Claude Code, GitHub, Supabase and Vercel, with the exact prompts to copy.">
+<meta property="og:title" content="How to start with Claude Code and build your MVP · Nicolás Martelli">
+<meta property="og:image" content="https://nicolasmartelli.pages.dev/assets/img/nico.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/">Nicolás Martelli<span>.</span></a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav">
+      <a href="/">Home</a>
+      <a href="/work">Work</a>
+      <a href="/blog" aria-current="page">Blog</a>
+      <a href="/about">About</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<article class="article">
+  <div class="wrap narrow">
+    <p class="eyebrow">Guide · Claude Code</p>
+    <h1>How to start with Claude Code and build your MVP</h1>
+    <p class="lead">Have a business idea but can't code? You can take it from idea to a live link you can send to customers in one afternoon. Here's the exact path I use, with the prompts to copy.</p>
+    <p class="byline">By Nicolás Martelli · 10 min read</p>
+
+    <div class="box">
+      <h3>Steps at a glance</h3>
+      <ol>
+        <li><b>Write a one-page brief:</b> what problem, for whom, and the one thing the app must do.</li>
+        <li><b>Claude Code:</b> describe the idea like you would to a co-founder. It writes the code.</li>
+        <li><b>GitHub:</b> ask Claude to save the project there, with every version.</li>
+        <li><b>Supabase:</b> your database and user login. It's free to start.</li>
+        <li><b>Vercel:</b> publish it and get a link you can share.</li>
+        <li><b>Check before sharing:</b> five checks, ten minutes.</li>
+      </ol>
+    </div>
+
+    <h2>0. Before you start: a one-page brief</h2>
+    <p>The biggest time sink isn't code. It's a vague idea. Before opening anything, answer these in a note:</p>
+    <ol>
+      <li>Who is it for? Be specific, for example "freelance bookkeepers in Perth", not "small businesses".</li>
+      <li>What problem do they have today, and how do they solve it now?</li>
+      <li>What is the <b>one</b> action your app lets them do? That's your MVP. Everything else waits.</li>
+      <li>What data needs to be saved: users, clients, invoices…?</li>
+      <li>How will you know it works? For example: "3 people use it twice in a week."</li>
+    </ol>
+
+    <h2>1. Claude Code: your technical co-founder</h2>
+    <p>Claude Code is Anthropic's AI coding agent. It works inside a folder on your computer: it reads files, writes code, runs commands and shows you the result. It needs a paid Claude plan (Pro or above) or API credits.</p>
+    <p><b>Install it</b> by following the official instructions at <a href="https://docs.claude.com/en/docs/claude-code/overview">docs.claude.com</a>. It's one command in the terminal, or you can use the Claude desktop app. Then create an empty folder for your project and open Claude Code there.</p>
+    <p>Now paste your brief with this prompt:</p>
+    <div class="prompt"><span class="label">Prompt · start the project</span><div class="text">I want to build an MVP. I'm not a developer, so explain decisions in plain language and keep it simple.
+
+Here's my brief:
+[paste your one-page brief]
+
+Please:
+1. Ask me any questions you need before starting (one at a time).
+2. Propose the simplest stack that works with Supabase for login and data and deploys to Vercel. Use Next.js unless you have a good reason not to.
+3. Create a CLAUDE.md file describing the project, the stack and the rules you'll follow.
+4. Build only the first screen and show me how to run it locally.</div></div>
+    <div class="box tip"><h3>Tip: build in slices</h3><p>Don't ask for the whole app at once. Ask for one feature, test it in the browser, then ask for the next. Small steps mean fewer bugs and you understand what's happening.</p></div>
+    <div class="prompt"><span class="label">Prompt · add one feature</span><div class="text">Next feature: [describe it, e.g. "a user can add a client with name, email and notes, and see the list"].
+Build only this. When you're done, tell me exactly how to test it in the browser and what I should see.</div></div>
+
+    <h2>2. GitHub: save every version</h2>
+    <p>GitHub stores your code online and keeps every version, so you can always go back. It's also what Vercel publishes from.</p>
+    <ol>
+      <li>Create a free account at <a href="https://github.com">github.com</a>.</li>
+      <li>Create a new <b>private</b> repository, with no README.</li>
+      <li>Ask Claude to connect and upload:</li>
+    </ol>
+    <div class="prompt"><span class="label">Prompt · upload to GitHub</span><div class="text">Set up git for this project and push it to my GitHub repository: [paste the repo URL].
+Before pushing, make sure .env files and any keys or secrets are in .gitignore and never get uploaded.
+From now on, after each feature works, commit with a short clear message.</div></div>
+
+    <h2>3. Supabase: database and login</h2>
+    <p>Supabase gives you a Postgres database, user sign-up and login, and file storage. The free tier is plenty for an MVP.</p>
+    <ol>
+      <li>Create an account at <a href="https://supabase.com">supabase.com</a> and a new project. Save the database password somewhere safe.</li>
+      <li>Go to <b>Project Settings → API</b> and copy the <b>Project URL</b> and the <b>publishable (anon) key</b>.</li>
+      <li>Give them to Claude:</li>
+    </ol>
+    <div class="prompt"><span class="label">Prompt · connect Supabase</span><div class="text">Connect the app to Supabase. My Project URL and publishable key are in .env.local (I'll paste them there myself; tell me the exact variable names).
+
+1. Add email sign-up and login.
+2. Create the tables we need for [your data] as SQL I can run in the Supabase SQL editor.
+3. Turn on Row Level Security so each user can only see and edit their own rows. Explain the policies in plain language.
+4. Never use the service_role key in the browser.</div></div>
+    <div class="box tip"><h3>Security, in one line</h3><p>The publishable key is OK in the browser <b>only because</b> Row Level Security decides who sees what. Without RLS, anyone could read your whole database. Always ask Claude to confirm RLS is on.</p></div>
+
+    <h2>4. Vercel: publish it</h2>
+    <p>Vercel turns your GitHub repo into a live website, and updates it every time you push.</p>
+    <ol>
+      <li>Sign up at <a href="https://vercel.com">vercel.com</a> with your GitHub account.</li>
+      <li><b>Add New → Project</b>, then choose your repository.</li>
+      <li>In <b>Environment Variables</b>, add the same Supabase URL and key you have in <code>.env.local</code>.</li>
+      <li>Click <b>Deploy</b>. In a minute or two you get a link like <code>your-app.vercel.app</code>.</li>
+      <li>In Supabase, go to <b>Authentication → URL Configuration</b> and add your Vercel link, so login emails point to the right place.</li>
+    </ol>
+    <p>Something broke? Copy the error from Vercel and paste it to Claude:</p>
+    <div class="prompt"><span class="label">Prompt · fix a deploy error</span><div class="text">The Vercel deploy failed with this error:
+[paste the error]
+Explain what's wrong in plain language, fix it, and push the fix.</div></div>
+
+    <h2>5. Check before you share</h2>
+    <p>Ten minutes now saves an awkward message to your first customer:</p>
+    <ul class="checklist">
+      <li>Sign up with a new email and complete the main action, start to finish, on the live link.</li>
+      <li>Open it on your phone. Does everything fit and work?</li>
+      <li>Log in as a second user: you must <b>not</b> see the first user's data.</li>
+      <li>Search your GitHub repo for "key" and "secret": nothing private should be there.</li>
+      <li>Ask Claude: <i>"Review this app for security problems a beginner would miss."</i></li>
+    </ul>
+
+    <h2>FAQ</h2>
+    <h3>Do I need to know how to code?</h3>
+    <p>No, but you need to be clear about what you want and test every step. You're the product manager; Claude is the engineer.</p>
+    <h3>How much does it cost?</h3>
+    <p>GitHub, Supabase and Vercel all have free tiers that cover an MVP. The main cost is your Claude plan.</p>
+    <h3>What if Claude gets stuck or goes in circles?</h3>
+    <p>Stop, describe what you expected versus what happened, and paste the exact error. If it keeps failing, ask it to undo the last change with git and try a simpler approach.</p>
+    <h3>Can I use my own domain later?</h3>
+    <p>Yes. Buy one and add it in Vercel under <b>Settings → Domains</b>.</p>
+
+    <div class="box" style="text-align:center;margin-top:56px">
+      <h3>Want more guides like this?</h3>
+      <p>I share how to build with AI, step by step, on Instagram.</p>
+      <p style="margin-top:16px"><a class="btn" href="https://www.instagram.com/INSTAGRAM_HANDLE/">Follow on Instagram</a></p>
+    </div>
+  </div>
+</article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Nicolás Martelli · Perth, WA</span>
+    <span><a href="https://www.instagram.com/INSTAGRAM_HANDLE/">Instagram</a><a href="https://www.linkedin.com/in/LINKEDIN_HANDLE/">LinkedIn</a><a href="https://github.com/Martita91">GitHub</a></span>
+  </div>
+</footer>
+<script src="/assets/js/main.js" defer></script>
+</body>
+</html>

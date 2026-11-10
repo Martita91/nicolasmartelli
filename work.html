@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Work · Nicolás Martelli</title>
+<meta name="description" content="Projects in applied AI and finance: Housenancials, Car Report, Meeting Notes, arquiApp and otiumsociety.com.">
+<meta property="og:title" content="Work · Nicolás Martelli">
+<meta property="og:image" content="https://nicolasmartelli.pages.dev/assets/img/nico.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/">Nicolás Martelli<span>.</span></a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav">
+      <a href="/">Home</a>
+      <a href="/work" aria-current="page">Work</a>
+      <a href="/blog">Blog</a>
+      <a href="/about">About</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="article" style="padding-bottom:0">
+  <div class="wrap">
+    <p class="eyebrow">Work</p>
+    <h1>Projects</h1>
+    <p class="lead">Real tools for real problems, mostly built with Claude Code. Each one taught me something about putting AI to work in finance and small business.</p>
+  </div>
+</section>
+<section style="padding-top:30px">
+  <div class="wrap">
+    <article class="case" id="housenancials">
+      <div class="meta"><p class="eyebrow">Personal finance</p><h2>Housenancials</h2>
+        <strong>Stack</strong>React, Vite, Tailwind, Supabase (auth + data), Vercel, Claude API
+        <strong>Role</strong>Product, design and build</div>
+      <div>
+        <p>A household financial plan in one place: objectives, net worth, monthly budget, and a 30-years-to-retirement investing projection.</p>
+        <ul>
+          <li><b>AI Insights:</b> a serverless function sends the household's figures to Claude, which writes plain-English observations on savings rate, goal timelines and risks.</li>
+          <li><b>Security by design:</b> every user's data is isolated with Supabase Row Level Security; the API key never reaches the browser.</li>
+          <li><b>Finance logic first:</b> projections are calculated in code, and the AI only explains them.</li>
+        </ul>
+      </div>
+    </article>
+    <article class="case" id="car-report">
+      <div class="meta"><p class="eyebrow">Market analytics</p><h2>Car Report</h2>
+        <strong>Stack</strong>Python, pandas, charts, PDF generation, static HTML
+        <strong>Role</strong>Data analysis and build</div>
+      <div>
+        <p>Feed it the listings for any make and model and it produces a used-car market report, in English or Spanish.</p>
+        <ul>
+          <li><b>PDF report:</b> summary, charts, what drives price (year, km, transmission, trim) and the five best-value listings.</li>
+          <li><b>Interactive price calculator:</b> see where a specific car sits against the market, with comparable listings and filters. Opens with a double click, no server.</li>
+          <li><b>Client-ready:</b> generates private, expiring share links for buyers.</li>
+        </ul>
+      </div>
+    </article>
+    <article class="case" id="meeting-notes">
+      <div class="meta"><p class="eyebrow">Productivity · privacy</p><h2>Meeting Notes</h2>
+        <strong>Stack</strong>Electron, Windows audio capture, whisper.cpp, local LLM (Ollama)
+        <strong>Role</strong>Build</div>
+      <div>
+        <p>A Windows tray app that records your computer's audio and microphone, transcribes the meeting and writes a summary, decisions and action items as Markdown.</p>
+        <ul>
+          <li><b>Private by default:</b> no accounts, no cloud storage, no telemetry. It can run fully offline.</li>
+          <li><b>Works with any call app:</b> Zoom, Teams or Meet, because it captures system audio.</li>
+          <li>One shortcut to start and stop. Notes land in a folder, ready to search.</li>
+        </ul>
+      </div>
+    </article>
+    <article class="case" id="arquiapp">
+      <div class="meta"><p class="eyebrow">Construction ops</p><h2>arquiApp</h2>
+        <strong>Stack</strong>Next.js, Supabase (Postgres, Auth, Storage, cron), Vercel, Claude, speech-to-text
+        <strong>Role</strong>Product and full-stack build</div>
+      <div>
+        <p>Project tracking for an architecture studio in Uruguay. Foremen and architects record voice notes from the building site, and the app turns them into structured reports on a dashboard.</p>
+        <ul>
+          <li><b>Voice in, report out:</b> audio is transcribed, then Claude organises it into progress, issues and next steps.</li>
+          <li><b>Tested AI:</b> an evaluation set checks the AI output before each change ships.</li>
+          <li><b>In production:</b> it runs on Vercel, with automated tests and database migrations.</li>
+        </ul>
+      </div>
+    </article>
+    <article class="case" id="otium">
+      <div class="meta"><p class="eyebrow">Web · small business</p><h2>otiumsociety.com</h2>
+        <strong>Stack</strong>HTML, CSS, a little JavaScript, Cloudflare Pages
+        <strong>Role</strong>Design and build</div>
+      <div>
+        <p>The website for Otium Society, an architecture, interiors and objects studio in Perth. It has services, a booking flow, a shop waitlist and contact forms.</p>
+        <ul>
+          <li><b>Built with Claude Code:</b> it went from brief to a live site, with no framework and no build step.</li>
+          <li><b>Fast and free to host:</b> a static site on Cloudflare Pages that deploys automatically from GitHub.</li>
+          <li>It is the same setup as this site.</li>
+        </ul>
+        <p><a href="https://otiumsociety.com">Visit otiumsociety.com →</a></p>
+      </div>
+    </article>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Nicolás Martelli · Perth, WA</span>
+    <span><a href="https://www.instagram.com/INSTAGRAM_HANDLE/">Instagram</a><a href="https://www.linkedin.com/in/LINKEDIN_HANDLE/">LinkedIn</a><a href="https://github.com/Martita91">GitHub</a></span>
+  </div>
+</footer>
+<script src="/assets/js/main.js" defer></script>
+</body>
+</html>

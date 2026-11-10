@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://nicolasmartelli.pages.dev/sitemap.xml
