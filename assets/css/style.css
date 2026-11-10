@@ -83,9 +83,10 @@ a.card:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(42,36,3
 .card .stack { margin-top: auto; padding-top: 12px; font-size: .8rem; color: var(--muted); font-family: var(--mono); }
 
 /* Work case studies */
-.case { display: grid; grid-template-columns: 260px 1fr; gap: 40px; padding: 48px 0; border-top: 1px solid var(--sand); scroll-margin-top: 20px; }
+.case { display: grid; grid-template-columns: 260px minmax(0, 1fr); gap: 40px; padding: 48px 0; border-top: 1px solid var(--sand); scroll-margin-top: 20px; }
 .case:first-of-type { border-top: 0; }
-.case .meta { font-size: .9rem; color: var(--muted); }
+.case .meta { font-size: .9rem; color: var(--muted); min-width: 0; }
+.case .meta h2 { font-size: clamp(1.6rem, 2.6vw, 2.1rem); overflow-wrap: anywhere; }
 .case .meta strong { display: block; color: var(--ink); font-weight: 600; margin-top: 12px; }
 .case ul { padding-left: 1.2em; }
 
