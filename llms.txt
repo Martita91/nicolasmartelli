@@ -1,0 +1,34 @@
+# Nicolás Martelli
+
+> AI builder based in Perth, Western Australia. Finance background. Builds practical AI tools for finance and small businesses with Claude Code, and publishes step-by-step guides for founders who don't code.
+
+Open to applied AI roles and projects in finance in Perth. Contact: https://www.linkedin.com/in/nicolasmartelli/
+
+## Pages
+
+- [Home](https://nicolasmartelli.pages.dev/): Overview, selected work and latest guide.
+- [Work](https://nicolasmartelli.pages.dev/work): Nine projects with stack, role and what each one does.
+- [About](https://nicolasmartelli.pages.dev/about): Background, focus areas and how to get in touch.
+- [Blog](https://nicolasmartelli.pages.dev/blog): Guides and notes on building with AI.
+
+## Guides
+
+- [How to start with Claude Code and build your MVP](https://nicolasmartelli.pages.dev/mvp): From idea to a live link in an afternoon using Claude Code, GitHub, Supabase and Vercel, with copy-paste prompts and a pre-launch checklist.
+
+## Projects
+
+- Housenancials: household budgeting and a 30-year retirement projection with AI insights (React, Supabase, Vercel, Claude API).
+- Car Report: used-car market reports and a price calculator for any make and model (Python, pandas).
+- Meeting Notes: local, private meeting transcription and summaries for Windows (Electron, whisper.cpp, Ollama).
+- Thursday F.C.: attendance, balanced teams, stats and Stripe payments for a weekly football group.
+- Pilot Fatigue: fatigue-risk scoring and supervisor dashboard for marine pilots.
+- Headlites: website with an SMS booking builder for a home hair and beauty studio in Perth.
+- Teleprompter: private in-browser teleprompter for recording reels.
+- arquiApp: voice notes from building sites turned into structured reports for an architecture studio.
+- otiumsociety.com: website for an architecture, interiors and objects studio in Perth.
+
+## Profiles
+
+- [LinkedIn](https://www.linkedin.com/in/nicolasmartelli/)
+- [Instagram](https://www.instagram.com/nicolas.martelli/)
+- [GitHub](https://github.com/Martita91)

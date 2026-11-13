@@ -7,12 +7,25 @@
 <meta name="description" content="I build practical AI tools for finance and small businesses. Guides, projects and notes on shipping with Claude Code. Based in Perth.">
 <meta property="og:title" content="Nicolás Martelli · AI builder">
 <meta property="og:image" content="https://nicolasmartelli.pages.dev/assets/img/nico.jpg">
+<meta property="og:description" content="I build practical AI tools for finance and small businesses. Guides, projects and notes on shipping with Claude Code. Based in Perth.">
+<meta property="og:url" content="https://nicolasmartelli.pages.dev/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Nicolás Martelli">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://nicolasmartelli.pages.dev/">
+<meta name="theme-color" content="#f4ede2">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/style.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Nicolás Martelli","url":"https://nicolasmartelli.pages.dev/","image":"https://nicolasmartelli.pages.dev/assets/img/nico.jpg","jobTitle":"AI builder","address":{"@type":"PostalAddress","addressLocality":"Perth","addressRegion":"WA","addressCountry":"AU"},"sameAs":["https://www.linkedin.com/in/nicolasmartelli/","https://www.instagram.com/nicolas.martelli/","https://github.com/Martita91"]}
+</script>
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
+<a class="skip" href="#main">Skip to content</a>
 <header class="site-header">
   <div class="wrap">
     <a class="logo" href="/">Nicolás Martelli<span>.</span></a>
@@ -26,7 +39,7 @@
   </div>
 </header>
 
-<main>
+<main id="main">
   <section class="hero">
     <div class="wrap">
       <div>
@@ -37,19 +50,21 @@
           <a class="btn" href="/work">See my work</a>
           <a class="btn ghost" href="/mvp">Start with Claude Code</a>
         </div>
-        <ul class="tags">
-          <li>Applied AI</li><li>Finance</li><li>Claude Code</li><li>Supabase</li><li>Python</li><li>React</li>
-        </ul>
       </div>
-      <div class="hero-photo"><img src="/assets/img/nico.jpg" alt="Portrait of Nicolás Martelli" width="800" height="1000"></div>
+      <div class="photo-wrap">
+        <div class="hero-photo"><img src="/assets/img/nico.jpg" alt="Portrait of Nicolás Martelli" width="800" height="1000" fetchpriority="high"></div>
+        <svg class="badge" viewBox="0 0 120 120" aria-hidden="true"><defs><path id="badge-circle" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"/></defs><circle class="badge-bg" cx="60" cy="60" r="60"/><g class="badge-spin"><text><textPath href="#badge-circle" textLength="270">AI BUILDER · PERTH, WA · CLAUDE CODE · </textPath></text></g><path class="badge-arrow" d="M49 71 L71 49 M55 49 H71 V65"/></svg>
+      </div>
     </div>
   </section>
 
-  <section style="padding-top:0">
+  <div class="marquee" aria-label="What I work with"><div class="marquee-track"><ul><li>Applied AI</li><li>Finance</li><li>Claude Code</li><li>Supabase</li><li>Python</li><li>React</li><li>Next.js</li><li>Automation</li></ul><ul aria-hidden="true"><li>Applied AI</li><li>Finance</li><li>Claude Code</li><li>Supabase</li><li>Python</li><li>React</li><li>Next.js</li><li>Automation</li></ul></div></div>
+
+  <section>
     <div class="wrap">
       <div class="section-head">
         <div><p class="eyebrow">Selected work</p><h2>Things I've built</h2></div>
-        <a href="/work">All projects →</a>
+        <a href="/work">All 9 projects →</a>
       </div>
       <div class="grid">
         <a class="card" href="/work#housenancials">
@@ -81,10 +96,11 @@
         <a href="/blog">All posts →</a>
       </div>
       <div class="grid">
-        <a class="card" href="/mvp">
+        <a class="card feature" href="/mvp">
           <span class="kicker">Guide · 10 min</span>
           <h3>How to start with Claude Code and build your MVP</h3>
           <p>From idea to a live link in an afternoon: Claude Code, GitHub, Supabase and Vercel, with the exact prompts.</p>
+          <span class="more">Read the guide →</span>
         </a>
       </div>
     </div>
