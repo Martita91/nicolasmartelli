@@ -173,6 +173,7 @@ th { font-weight: 600; }
 .skip:focus { top: 12px; color: var(--cream); }
 
 /* Helpers */
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .flush-top { padding-top: 0; }
 .flush-bottom { padding-bottom: 0; }
 .tight-top { padding-top: 30px; }

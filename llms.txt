@@ -7,9 +7,10 @@ Open to applied AI roles and projects in finance in Perth. Contact: https://www.
 ## Pages
 
 - [Home](https://nicolasmartelli.pages.dev/): Overview, selected work and latest guide.
-- [Work](https://nicolasmartelli.pages.dev/work): Nine projects with stack, role and what each one does.
+- [Work](https://nicolasmartelli.pages.dev/work): Ten projects with stack, role and what each one does.
 - [About](https://nicolasmartelli.pages.dev/about): Background, focus areas and how to get in touch.
 - [Blog](https://nicolasmartelli.pages.dev/blog): Guides and notes on building with AI.
+- [Web Audit](https://nicolasmartelli.pages.dev/audit): Free tool that audits any website for SEO, AI visibility, accessibility and best practices.
 
 ## Guides
 
@@ -26,6 +27,7 @@ Open to applied AI roles and projects in finance in Perth. Contact: https://www.
 - Teleprompter: private in-browser teleprompter for recording reels.
 - arquiApp: voice notes from building sites turned into structured reports for an architecture studio.
 - otiumsociety.com: website for an architecture, interiors and objects studio in Perth.
+- Web Audit: free website audit for SEO and AI visibility, with a serverless crawler on Cloudflare Pages Functions.
 
 ## Profiles
 

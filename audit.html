@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Free Web Audit: SEO &amp; AI visibility · Nicolás Martelli</title>
+<meta name="description" content="Free website audit. Enter any address and get scores for SEO, AI visibility, accessibility and best practices, with a list of what to fix first.">
+<meta property="og:title" content="Free Web Audit: SEO &amp; AI visibility">
+<meta property="og:image" content="https://nicolasmartelli.pages.dev/assets/img/nico.jpg">
+<meta property="og:description" content="Free website audit. Enter any address and get scores for SEO, AI visibility, accessibility and best practices, with a list of what to fix first.">
+<meta property="og:url" content="https://nicolasmartelli.pages.dev/audit">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Nicolás Martelli">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://nicolasmartelli.pages.dev/audit">
+<meta name="theme-color" content="#f4ede2">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="/assets/css/audit.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"Web Audit","url":"https://nicolasmartelli.pages.dev/audit","applicationCategory":"DeveloperApplication","operatingSystem":"Any","description":"Free website audit that scores SEO, AI visibility, accessibility and best practices, and lists what to fix first.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"creator":{"@type":"Person","name":"Nicolás Martelli","url":"https://nicolasmartelli.pages.dev/about"}}
+</script>
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body class="audit">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/">Nicolás Martelli<span>.</span></a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav">
+      <a href="/">Home</a>
+      <a href="/work" aria-current="page">Work</a>
+      <a href="/blog">Blog</a>
+      <a href="/about">About</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<section class="audit-hero">
+  <div class="wrap">
+    <p class="eyebrow">Free tool</p>
+    <h1>Web <em class="accent">Audit.</em></h1>
+    <p class="lead">Enter any website and get a score for SEO, AI visibility, accessibility and best practices, plus a plain-English list of what to fix first.</p>
+    <form class="audit-form" id="audit-form" novalidate>
+      <label class="sr-only" for="audit-url">Website address</label>
+      <input type="text" id="audit-url" name="url" placeholder="example.com" inputmode="url" autocomplete="url" autocapitalize="off" spellcheck="false">
+      <button class="btn" type="submit" id="audit-run">Run audit</button>
+    </form>
+    <p class="audit-status" id="audit-status" role="status"></p>
+  </div>
+</section>
+
+<section class="results" id="results" hidden>
+  <div class="wrap">
+    <div class="results-head">
+      <div>
+        <p class="eyebrow">Results</p>
+        <h2 id="r-site"></h2>
+        <p id="r-sub"></p>
+      </div>
+      <button type="button" class="linkbtn" id="copy-report">Copy report</button>
+    </div>
+    <div class="dials" id="dials"></div>
+    <p class="audit-note">Speed is not measured here. For real loading performance, run <a id="psi" href="https://pagespeed.web.dev/" target="_blank" rel="noopener">PageSpeed Insights</a>. Colour contrast is not checked either.</p>
+
+    <div class="rblock">
+      <div class="rblock-head"><h2>Fix these first</h2></div>
+      <ul class="rows" id="top"></ul>
+    </div>
+
+    <div class="rblock">
+      <div class="rblock-head">
+        <h2>Every check</h2>
+        <label class="toggle"><input type="checkbox" id="onlyissues"> Only problems</label>
+      </div>
+      <div class="tabs" id="tabs"></div>
+      <ul class="rows" id="rows"></ul>
+    </div>
+  </div>
+</section>
+
+<section class="dark">
+  <div class="wrap">
+    <div class="section-head">
+      <div><p class="eyebrow">How it works</p><h2>What the audit looks at</h2></div>
+    </div>
+    <div class="explain">
+      <div>
+        <h3>What does it check?</h3>
+        <p>About 40 checks across four areas: SEO basics like titles, descriptions and canonical links; AI visibility; accessibility; and technical best practices.</p>
+      </div>
+      <div>
+        <h3>What is AI visibility?</h3>
+        <p>How easy it is for assistants like ChatGPT, Claude and Perplexity to read and quote your site: whether their crawlers are allowed, structured data, an llms.txt file and content that works without JavaScript.</p>
+      </div>
+      <div>
+        <h3>Which pages does it read?</h3>
+        <p>The home page, the pages it links to and the ones in your sitemap, up to 12 pages, plus robots.txt and llms.txt. It only reads public pages and stores nothing.</p>
+      </div>
+      <div>
+        <h3>Does it measure speed?</h3>
+        <p>No. It reads the HTML your server sends, so it cannot time how fast the page loads. The results link to PageSpeed Insights for that.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="wrap narrow">
+    <p class="eyebrow">Want a hand?</p>
+    <h2>Need help fixing what it found?</h2>
+    <p class="lead">I build fast, well-structured sites and AI tools for small businesses.</p>
+    <a class="btn" href="/about">About me &amp; contact</a>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Nicolás Martelli · Perth, WA</span>
+    <span><a href="https://www.instagram.com/nicolas.martelli/">Instagram</a><a href="https://www.linkedin.com/in/nicolasmartelli/">LinkedIn</a><a href="https://github.com/Martita91">GitHub</a></span>
+  </div>
+</footer>
+<script src="/assets/js/main.js" defer></script>
+<script src="/assets/js/audit.js" defer></script>
+</body>
+</html>
