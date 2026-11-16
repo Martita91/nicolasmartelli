@@ -60,33 +60,7 @@
           <li><b>Security by design:</b> every user's data is isolated with Supabase Row Level Security; the API key never reaches the browser.</li>
           <li><b>Finance logic first:</b> projections are calculated in code, and the AI only explains them.</li>
         </ul>
-      </div>
-    </article>
-    <article class="case" id="car-report">
-      <div class="meta"><p class="eyebrow">Market analytics</p><h2>Car Report</h2>
-        <strong>Stack</strong>Python, pandas, charts, PDF generation, static HTML
-        <strong>Role</strong>Data analysis and build</div>
-      <div>
-        <p>Feed it the listings for any make and model and it produces a used-car market report, in English or Spanish.</p>
-        <ul>
-          <li><b>PDF report:</b> summary, charts, what drives price (year, km, transmission, trim) and the five best-value listings.</li>
-          <li><b>Interactive price calculator:</b> see where a specific car sits against the market, with comparable listings and filters. Opens with a double click, no server.</li>
-          <li><b>Client-ready:</b> generates private, expiring share links for buyers.</li>
-        </ul>
-        <p><a href="https://claude.ai/artifact/2Gcrf8v9MyS9LBQBcjyrgG">Try KerbsideCars, the live version →</a></p>
-      </div>
-    </article>
-    <article class="case" id="meeting-notes">
-      <div class="meta"><p class="eyebrow">Productivity · privacy</p><h2>Meeting Notes</h2>
-        <strong>Stack</strong>Electron, Windows audio capture, whisper.cpp, local LLM (Ollama)
-        <strong>Role</strong>Build</div>
-      <div>
-        <p>Think Granola, but local. A Windows tray app that records your computer's audio and microphone, transcribes the meeting and writes a summary, decisions and action items as Markdown.</p>
-        <ul>
-          <li><b>Private by default:</b> no accounts, no cloud storage, no telemetry. It can run fully offline.</li>
-          <li><b>Works with any call app:</b> Zoom, Teams or Meet, because it captures system audio.</li>
-          <li>One shortcut to start and stop. Notes land in a folder, ready to search.</li>
-        </ul>
+        <p class="live"><a href="https://housenancials.vercel.app/">Try the live app →</a></p>
       </div>
     </article>
     <article class="case" id="thursdayfc">
@@ -101,6 +75,35 @@
           <li><b>Stats and leaderboards:</b> results, player stats and recent form, to keep the banter going.</li>
           <li><b>Payments:</b> match entry is paid through Stripe, so no more chasing cash.</li>
         </ul>
+        <p class="live"><a href="https://thursdayfc.au/">Visit thursdayfc.au →</a></p>
+      </div>
+    </article>
+    <article class="case" id="arquiapp">
+      <div class="meta"><p class="eyebrow">Construction ops</p><h2>arquiApp</h2>
+        <strong>Stack</strong>Next.js, Supabase (Postgres, Auth, Storage, cron), Vercel, Claude, speech-to-text
+        <strong>Role</strong>Product and full-stack build</div>
+      <div>
+        <p>Project tracking for an architecture studio in Uruguay. Foremen and architects record voice notes from the building site, and the app turns them into structured reports on a dashboard.</p>
+        <ul>
+          <li><b>Voice in, report out:</b> audio is transcribed, then Claude organises it into progress, issues and next steps.</li>
+          <li><b>Tested AI:</b> an evaluation set checks the AI output before each change ships.</li>
+          <li><b>In production:</b> it runs on Vercel, with automated tests and database migrations.</li>
+        </ul>
+        <p class="live"><a href="https://arqui-app-lyart.vercel.app/app">See the app →</a> <span class="note">Login required, built for a client studio.</span></p>
+      </div>
+    </article>
+    <article class="case" id="car-report">
+      <div class="meta"><p class="eyebrow">Market analytics</p><h2>Car Report</h2>
+        <strong>Stack</strong>Python, pandas, charts, PDF generation, static HTML
+        <strong>Role</strong>Data analysis and build</div>
+      <div>
+        <p>Feed it the listings for any make and model and it produces a used-car market report, in English or Spanish.</p>
+        <ul>
+          <li><b>PDF report:</b> summary, charts, what drives price (year, km, transmission, trim) and the five best-value listings.</li>
+          <li><b>Interactive price calculator:</b> see where a specific car sits against the market, with comparable listings and filters. Opens with a double click, no server.</li>
+          <li><b>Client-ready:</b> generates private, expiring share links for buyers.</li>
+        </ul>
+        <p class="live"><a href="https://claude.ai/artifact/2Gcrf8v9MyS9LBQBcjyrgG">Try KerbsideCars, the live version →</a></p>
       </div>
     </article>
     <article class="case" id="pilot-fatigue">
@@ -114,7 +117,20 @@
           <li><b>Supervisor dashboard:</b> fleet KPIs, a heatmap of peaks by pilot and day, and the incident reports.</li>
           <li><b>Alerts:</b> low-sleep breaches, missing logs and escalation to the supervisor.</li>
         </ul>
-        <p><a href="https://claude.ai/artifact/JcTwUbXjDYCfwYqpmRDT7t">View the demo →</a></p>
+        <p class="live"><a href="https://claude.ai/artifact/JcTwUbXjDYCfwYqpmRDT7t">View the demo →</a></p>
+      </div>
+    </article>
+    <article class="case" id="meeting-notes">
+      <div class="meta"><p class="eyebrow">Productivity · privacy</p><h2>Meeting Notes</h2>
+        <strong>Stack</strong>Electron, Windows audio capture, whisper.cpp, local LLM (Ollama)
+        <strong>Role</strong>Build</div>
+      <div>
+        <p>Think Granola, but local. A Windows tray app that records your computer's audio and microphone, transcribes the meeting and writes a summary, decisions and action items as Markdown.</p>
+        <ul>
+          <li><b>Private by default:</b> no accounts, no cloud storage, no telemetry. It can run fully offline.</li>
+          <li><b>Works with any call app:</b> Zoom, Teams or Meet, because it captures system audio.</li>
+          <li>One shortcut to start and stop. Notes land in a folder, ready to search.</li>
+        </ul>
       </div>
     </article>
     <article class="case" id="headlites">
@@ -142,21 +158,8 @@
         </ul>
       </div>
     </article>
-    <article class="case" id="arquiapp">
-      <div class="meta"><p class="eyebrow">Construction ops</p><h2>arquiApp</h2>
-        <strong>Stack</strong>Next.js, Supabase (Postgres, Auth, Storage, cron), Vercel, Claude, speech-to-text
-        <strong>Role</strong>Product and full-stack build</div>
-      <div>
-        <p>Project tracking for an architecture studio in Uruguay. Foremen and architects record voice notes from the building site, and the app turns them into structured reports on a dashboard.</p>
-        <ul>
-          <li><b>Voice in, report out:</b> audio is transcribed, then Claude organises it into progress, issues and next steps.</li>
-          <li><b>Tested AI:</b> an evaluation set checks the AI output before each change ships.</li>
-          <li><b>In production:</b> it runs on Vercel, with automated tests and database migrations.</li>
-        </ul>
-      </div>
-    </article>
     <article class="case" id="otium">
-      <div class="meta"><p class="eyebrow">Web · small business</p><h2>otiumsociety.com</h2>
+      <div class="meta"><p class="eyebrow">Web · small business</p><h2>Otium Society</h2>
         <strong>Stack</strong>HTML, CSS, a little JavaScript, Cloudflare Pages
         <strong>Role</strong>Design and build</div>
       <div>
@@ -166,7 +169,7 @@
           <li><b>Fast and free to host:</b> a static site on Cloudflare Pages that deploys automatically from GitHub.</li>
           <li>It is the same setup as this site.</li>
         </ul>
-        <p><a href="https://otiumsociety.com">Visit otiumsociety.com →</a></p>
+        <p class="live"><a href="https://otiumsociety.com">Visit otiumsociety.com →</a></p>
       </div>
     </article>
     <article class="case" id="web-audit">
@@ -180,7 +183,7 @@
           <li><b>Built for answer engines:</b> it checks whether AI crawlers are allowed, structured data, llms.txt and whether the content reads without JavaScript.</li>
           <li><b>Explains every point lost:</b> each check says what it found, on which pages, and how to fix it.</li>
         </ul>
-        <p><a href="/audit">Run a free audit →</a></p>
+        <p class="live"><a href="/audit">Run a free audit →</a></p>
       </div>
     </article>
   </div>
