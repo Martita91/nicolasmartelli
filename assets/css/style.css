@@ -133,13 +133,17 @@ main { counter-reset: case; }
 .case .meta h2 { font-size: clamp(1.6rem, 2.6vw, 2.1rem); overflow-wrap: anywhere; margin-bottom: .2em; }
 .case .meta strong { display: block; color: var(--muted); font-weight: 600; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; margin-top: 12px; }
 .case > div:last-child { padding-top: 1.9rem; }
-.case > div:last-child:has(> .shot) { padding-top: 0; }
-.case > div:last-child > p:first-child { font-size: 1.12rem; margin-top: 0; }
+.case > div:last-child > p:first-of-type { font-size: 1.12rem; margin-top: 0; }
 .case ul { margin: 0 0 4px; }
-.shot { margin: 0 0 22px; border-radius: 14px; overflow: hidden; border: 1px solid var(--sand); background: #e9dfcf; }
-.shot img { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; }
-.shot.phone { display: flex; justify-content: center; background: #1d1a17; padding: 22px 0; }
-.shot.phone img { width: auto; height: 380px; aspect-ratio: auto; border-radius: 10px; }
+.case > div:last-child:has(> .shot) { display: grid; grid-template-columns: minmax(0, 1fr) 280px; column-gap: 36px; align-content: start; }
+.case > div:last-child:has(> .shot) > * { grid-column: 1; }
+.case > div:last-child > .shot { grid-column: 2; grid-row: 1 / span 6; align-self: start; }
+.shot { margin: 6px 0 0; border-radius: 12px; overflow: hidden; border: 1px solid var(--sand); background: #e9dfcf; }
+.shot a { display: block; }
+.shot img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; object-position: top left; transition: transform .4s cubic-bezier(.2,.7,.2,1); }
+.shot a:hover img { transform: scale(1.03); }
+.shot.phone { display: flex; justify-content: center; background: #1d1a17; padding: 16px 0; }
+.shot.phone img { width: auto; height: 240px; aspect-ratio: auto; border-radius: 8px; }
 .case .live { margin: 18px 0 0; font-weight: 500; }
 .case .live + .live { margin-top: 8px; }
 .case .live a { text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 1px; }
@@ -219,6 +223,8 @@ th { font-weight: 600; }
   .nav a::after { display: none; }
   .case .meta { position: static; }
   .case > div:last-child { padding-top: 0; }
+  .case > div:last-child:has(> .shot) { display: block; }
+  .shot { margin: 0 0 20px; max-width: 520px; }
   .photo-wrap { max-width: 380px; }
   .badge { left: auto; right: -6px; bottom: 28px; width: 108px; height: 108px; }
   .marquee li { font-size: 1.2rem; }

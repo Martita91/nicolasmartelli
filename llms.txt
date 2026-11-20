@@ -12,6 +12,7 @@ Open to applied AI roles and projects in finance in Perth. Contact: https://www.
 - [Blog](https://nicolasmartelli.pages.dev/blog): Guides and notes on building with AI.
 - [Web Audit](https://nicolasmartelli.pages.dev/audit): Free tool that audits any website for SEO, AI visibility, accessibility and best practices.
 - [ArquiApp case study](https://nicolasmartelli.pages.dev/arquiapp-case-study): Business analysis case study: process maps, a stakeholder-driven redesign, user stories and a success metric for an architecture studio's site reporting.
+- [Housenancials project](https://nicolasmartelli.pages.dev/housenancials): Project page for a household financial plan app: screenshots, features, how Claude explains the figures while code does the maths, and security.
 
 ## Guides
 
@@ -26,7 +27,7 @@ Open to applied AI roles and projects in finance in Perth. Contact: https://www.
 - Pilot Fatigue: fatigue-risk scoring and supervisor dashboard for marine pilots.
 - Headlites: website with an SMS booking builder for a home hair and beauty studio in Perth.
 - Teleprompter: private in-browser teleprompter for recording reels.
-- arquiApp: voice notes from building sites turned into structured reports for an architecture studio.
+- ArquiApp: voice notes from building sites turned into structured reports for an architecture studio.
 - otiumsociety.com: website for an architecture, interiors and objects studio in Perth.
 - Web Audit: free website audit for SEO and AI visibility, with a serverless crawler on Cloudflare Pages Functions.
 

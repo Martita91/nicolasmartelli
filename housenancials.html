@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Housenancials project · Nicolás Martelli</title>
+<meta name="description" content="Housenancials is a household financial plan in one place: objectives, budget, net worth and a retirement projection, with AI that explains the numbers while code does the maths.">
+<meta property="og:title" content="Housenancials: a household financial plan where code does the maths · Nicolás Martelli">
+<meta property="og:description" content="Objectives, budget, net worth and a retirement projection in one app, with Claude explaining the figures and answering what-if questions.">
+<meta property="og:image" content="https://nicolasmartelli.pages.dev/assets/img/work/housenancials/overview.webp">
+<meta property="og:url" content="https://nicolasmartelli.pages.dev/housenancials">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Nicolás Martelli">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://nicolasmartelli.pages.dev/housenancials">
+<meta name="theme-color" content="#f4ede2">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261120b">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "Housenancials: a household financial plan where code does the maths", "description": "Objectives, budget, net worth and a retirement projection in one app, with Claude explaining the figures and answering what-if questions.", "image": "https://nicolasmartelli.pages.dev/assets/img/work/housenancials/overview.webp", "datePublished": "2026-11-20", "dateModified": "2026-11-20", "mainEntityOfPage": "https://nicolasmartelli.pages.dev/housenancials", "author": {"@type": "Person", "name": "Nicolás Martelli", "url": "https://nicolasmartelli.pages.dev/about"}}
+</script>
+<script>document.documentElement.classList.add('js')</script>
+<style>
+  /* Project-page additions, using the site's tokens */
+  .facts { display: grid; grid-template-columns: max-content 1fr; gap: 8px 20px; margin: 0; }
+  .facts dt { font-weight: 600; }
+  .facts dd { margin: 0; color: var(--muted); }
+  .screen { margin: 28px 0; }
+  .screen img { display: block; width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--sand); box-shadow: 0 22px 44px -26px rgba(42,36,31,.35); }
+  .screen figcaption { color: var(--muted); font-size: .9rem; margin-top: 10px; }
+  @media (min-width: 900px) { .screen.wide { --w: min(1000px, calc(100vw - 64px)); width: var(--w); margin-left: calc((100% - var(--w)) / 2); } }
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .pair .screen { margin: 0; }
+  @media (min-width: 900px) { .pair { --w: min(1000px, calc(100vw - 64px)); width: var(--w); margin: 28px 0 28px calc((100% - var(--w)) / 2); } }
+  @media (max-width: 899px) { .pair { grid-template-columns: 1fr; margin: 28px 0; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/">Nicolás Martelli<span>.</span></a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav">
+      <a href="/">Home</a>
+      <a href="/work" aria-current="page">Work</a>
+      <a href="/blog">Blog</a>
+      <a href="/about">About</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<article class="article">
+  <div class="wrap narrow">
+    <p class="eyebrow">Project · Personal finance</p>
+    <h1>Housenancials: a household financial plan where code does the maths</h1>
+    <p class="lead">Objectives, budget, net worth and a 30-years-to-retirement projection in one app. Claude explains the figures and answers what-if questions, but every number is calculated in code.</p>
+    <p class="byline">By Nicolás Martelli · 4 min read</p>
+
+    <div class="box">
+      <h2>At a glance</h2>
+      <dl class="facts">
+        <dt>What</dt><dd>A web app that connects a household's goals, monthly budget, net worth and retirement plan</dd>
+        <dt>My role</dt><dd>Product, design and build</dd>
+        <dt>Stack</dt><dd>React, Vite, Tailwind, Supabase (auth, data, Row Level Security, realtime), Vercel serverless functions, Claude API</dd>
+        <dt>Status</dt><dd>Live, with a guest mode that runs on example data</dd>
+      </dl>
+    </div>
+
+    <h2>1. One plan instead of five spreadsheets</h2>
+    <p>Most budgeting tools stop at tracking spending. Housenancials links the pieces of a household plan, so a change in one place shows up everywhere else: raise the rent and the savings rate, the goal timelines and the retirement projection all move with it.</p>
+    <figure class="screen wide">
+      <img src="/assets/img/work/housenancials/overview.webp" alt="Overview tab with net worth, a budget split by income, expenses, goals, savings and investing, progress on objectives and the projected balance at 65" width="1200" height="750" loading="lazy">
+      <figcaption>The overview: net worth, where the income goes, progress on goals and the projected balance at 65, on one screen.</figcaption>
+    </figure>
+
+    <h2>2. What it does</h2>
+    <ul>
+      <li><b>Objectives:</b> goals grouped by horizon (within a year, one to three years, five years or more), with what has been saved so far against each group.</li>
+      <li><b>Household budget:</b> income and spending lines, monthly or annual, with a bar that shows where the money goes and a warning when the plan spends more than comes in.</li>
+      <li><b>Net worth:</b> assets and liabilities with expected growth rates, an allocation chart, and a monthly snapshot to build a trend over time.</li>
+      <li><b>Investing:</b> a projection to retirement from age, contributions, return and inflation, next to the FIRE number (25 times annual expenses).</li>
+      <li><b>Statement import:</b> load a CommBank CSV export and the app sorts the transactions into budget lines. The file is parsed in the browser and never uploaded.</li>
+    </ul>
+    <div class="pair">
+      <figure class="screen">
+        <img src="/assets/img/work/housenancials/budget.webp" alt="Household Budget tab showing where the money goes and an over-budget warning" width="1200" height="750" loading="lazy">
+        <figcaption>The budget flags a plan that spends more than it earns.</figcaption>
+      </figure>
+      <figure class="screen">
+        <img src="/assets/img/work/housenancials/investing.webp" alt="Investing tab with the projected balance at 65, the FIRE number and the growth chart" width="1200" height="750" loading="lazy">
+        <figcaption>The retirement projection updates as the assumptions change.</figcaption>
+      </figure>
+    </div>
+    <div class="pair">
+      <figure class="screen">
+        <img src="/assets/img/work/housenancials/objectives.webp" alt="Objectives tab with short and medium-term goals and progress bars" width="1200" height="750" loading="lazy">
+        <figcaption>Goals by horizon, with what has been saved against each group.</figcaption>
+      </figure>
+      <figure class="screen">
+        <img src="/assets/img/work/housenancials/networth.webp" alt="Net Worth tab with total assets, liabilities and the asset allocation chart" width="1200" height="750" loading="lazy">
+        <figcaption>Net worth and how the assets are split.</figcaption>
+      </figure>
+    </div>
+
+    <h2>3. How the AI is used</h2>
+    <p>The rule for the whole app: <b>code does the maths, the AI explains it</b>. A language model that does arithmetic on someone's savings will eventually get a number wrong, so it never does.</p>
+    <ul>
+      <li><b>AI Insights:</b> savings rate, goal timelines, emergency-fund coverage and the FIRE age are computed in code. A serverless function sends those figures to Claude, which returns plain-English observations in a fixed JSON format that the card renders. Results are cached and only refreshed on request.</li>
+      <li><b>Ask Housenancials:</b> a chat panel for questions like "what if we put an extra $500 a month into investing?". Claude can call two tools: one simulates a change on a copy of the plan and returns the before-and-after figures; the other proposes a change as a card with Apply and Cancel. The server never writes to the plan; only the user's click does.</li>
+      <li><b>Cost:</b> the chat runs on a small, fast model with prompt caching, which measured at roughly a tenth of a cent per question.</li>
+    </ul>
+
+    <h2>4. Security and trust</h2>
+    <ul>
+      <li><b>Data isolation:</b> every household's data is protected by Supabase Row Level Security, so the database itself decides who can read what.</li>
+      <li><b>No exposed keys:</b> the Claude API key lives only in the serverless functions and never reaches the browser.</li>
+      <li><b>A safe demo:</b> guests sign in anonymously and work on a separate demo table with example data, locked away from real accounts.</li>
+      <li><b>Tested maths:</b> automated tests cover the plan calculations the AI features rely on.</li>
+    </ul>
+
+    <h2>5. Try it</h2>
+    <p>Open the live app and choose "Continue as guest" to explore the example household. Changes are shared with other guests, and "Reset demo data" restores the original figures.</p>
+    <p class="live"><a href="https://housenancials.vercel.app/">Try the live app →</a></p>
+
+    <div class="box center">
+      <h2>See the rest of my work</h2>
+      <p><a href="/work">All projects →</a></p>
+    </div>
+  </div>
+</article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Nicolás Martelli · Perth, WA</span>
+    <span><a href="https://www.instagram.com/nicolas.martelli/">Instagram</a><a href="https://www.linkedin.com/in/nicolasmartelli/">LinkedIn</a><a href="https://github.com/Martita91">GitHub</a></span>
+  </div>
+</footer>
+<script src="/assets/js/main.js" defer></script>
+</body>
+</html>
