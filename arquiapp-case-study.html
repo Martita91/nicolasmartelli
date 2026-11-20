@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ArquiApp case study · Nicolás Martelli</title>
+<meta name="description" content="How I mapped an architecture studio's WhatsApp-based site reporting, learned from the people who use it, and redesigned the process around an AI assistant and a dashboard.">
+<meta property="og:title" content="ArquiApp: from 30 WhatsApp groups to one record · Nicolás Martelli">
+<meta property="og:description" content="A business analysis case study: process maps, a stakeholder-driven redesign, user stories and a success metric.">
+<meta property="og:image" content="https://nicolasmartelli.pages.dev/assets/img/nico.jpg">
+<meta property="og:url" content="https://nicolasmartelli.pages.dev/arquiapp-case-study">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Nicolás Martelli">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://nicolasmartelli.pages.dev/arquiapp-case-study">
+<meta name="theme-color" content="#f4ede2">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261120">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "ArquiApp: from 30 WhatsApp groups to one record", "description": "A business analysis case study: process maps, a stakeholder-driven redesign, user stories and a success metric for an architecture studio's site reporting.", "image": "https://nicolasmartelli.pages.dev/assets/img/nico.jpg", "datePublished": "2026-11-20", "dateModified": "2026-11-20", "mainEntityOfPage": "https://nicolasmartelli.pages.dev/arquiapp-case-study", "author": {"@type": "Person", "name": "Nicolás Martelli", "url": "https://nicolasmartelli.pages.dev/about"}}
+</script>
+<script>document.documentElement.classList.add('js')</script>
+<style>
+  /* Case-study additions, using the site's tokens */
+  .facts { display: grid; grid-template-columns: max-content 1fr; gap: 8px 20px; margin: 0; }
+  .facts dt { font-weight: 600; }
+  .facts dd { margin: 0; color: var(--muted); }
+  .diagram { margin: 28px 0; background: var(--paper); border: 1px solid var(--sand); border-radius: var(--radius); padding: 16px; }
+  .diagram .scroll { overflow-x: auto; }
+  .diagram svg { display: block; min-width: 760px; width: 100%; height: auto; font-family: var(--sans); }
+  @media (min-width: 900px) { .diagram { --w: min(1000px, calc(100vw - 64px)); width: var(--w); margin-left: calc((100% - var(--w)) / 2); } }
+  .diagram figcaption { color: var(--muted); font-size: .9rem; margin-top: 10px; }
+  .legend { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: .85rem; color: var(--muted); margin-top: 8px; }
+  .story { background: var(--paper); border: 1px solid var(--sand); border-left: 4px solid var(--forest); border-radius: var(--radius); padding: 20px 24px; margin: 18px 0; }
+  .story h3 { margin: 0 0 6px; font-size: 1.05rem; }
+  .story .as { margin: 0 0 10px; }
+  .story ul { margin: 0; padding-left: 1.2em; }
+  .story li { margin: 4px 0; }
+  .story .gwt { font-family: var(--mono); font-size: .8rem; color: var(--terra-dark); font-weight: 600; }
+  .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0 8px; align-items: start; }
+  .compare .box { padding: 18px 22px; margin: 0; }
+  .compare h3 { margin-bottom: 8px; }
+  @media (max-width: 860px) { .compare { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/">Nicolás Martelli<span>.</span></a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav">
+      <a href="/">Home</a>
+      <a href="/work" aria-current="page">Work</a>
+      <a href="/blog">Blog</a>
+      <a href="/about">About</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<article class="article">
+  <div class="wrap narrow">
+    <p class="eyebrow">Case study · Business analysis</p>
+    <h1>ArquiApp: from 30 WhatsApp groups to one record</h1>
+    <p class="lead">An architecture studio was running site reporting through dozens of WhatsApp groups. I mapped how the work really flowed, listened when my first design missed the mark, and redesigned the process so nobody on site had to change how they work.</p>
+    <p class="byline">By Nicolás Martelli · 6 min read</p>
+
+    <div class="box">
+      <h2>At a glance</h2>
+      <dl class="facts">
+        <dt>Client</dt><dd>An architecture studio in Argentina and Uruguay with more than 10 active building projects</dd>
+        <dt>My role</dt><dd>Business analysis, process design and build, end to end</dd>
+        <dt>Methods</dt><dd>Stakeholder interviews, BPMN process maps, user stories with acceptance criteria, a success metric with a baseline, an evaluation set for the AI</dd>
+        <dt>Stack</dt><dd>Next.js, Supabase (PostgreSQL), WhatsApp Business API via Twilio, speech-to-text, Claude</dd>
+      </dl>
+    </div>
+
+    <h2>1. The problem</h2>
+    <p>Every project had three WhatsApp groups: one with the client, one inside the studio and one with the builder. With more than 10 projects, that meant over 30 groups where everything landed together: progress updates, photos, payments, client questions, and what had been approved or changed.</p>
+    <p>Finding anything meant scrolling and filtering by hand. Four things were being lost:</p>
+    <ul>
+      <li><b>Time:</b> the studio director spent hours chasing and sorting information.</li>
+      <li><b>Early warnings:</b> problems surfaced late, which meant rework and delays.</li>
+      <li><b>Client trust:</b> clients were not always well informed.</li>
+      <li><b>A record:</b> no reliable history of what was approved, what changed and who decided, which matters most when there is a dispute.</li>
+    </ul>
+
+    <h2>2. Agree on success before building</h2>
+    <p>Before designing anything, I set one number to judge the project by: <b>the share of active projects with a report in the last three working days</b>. At the start it was <b>40%</b>: fewer than half the projects had a recent report. The target is <b>80% after four weeks of use</b>. Every feature that followed had to move it.</p>
+
+    <h2>3. How the work flowed (as-is)</h2>
+    <figure class="diagram">
+      <div class="scroll">
+      <svg viewBox="0 0 960 330" role="img" aria-labelledby="asis-title asis-desc">
+        <title id="asis-title">As-is process</title>
+        <desc id="asis-desc">Site teams post voice notes and photos to over 30 WhatsApp groups. The director scrolls and filters by hand. If an issue is found in time, the director updates the client by hand; if not, it is found late and causes rework. Clients ask and approve inside chat history, so there is no single record.</desc>
+        <defs>
+          <marker id="a1" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2a241f"/></marker>
+          <marker id="a1m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6e6257"/></marker>
+        </defs>
+        <!-- pool and lanes -->
+        <rect x="1" y="1" width="958" height="328" rx="10" fill="#fbf7f0" stroke="#2a241f" stroke-width="1.5"/>
+        <line x1="40" y1="110" x2="959" y2="110" stroke="#e6d9c6" stroke-width="1.5"/>
+        <line x1="40" y1="220" x2="959" y2="220" stroke="#e6d9c6" stroke-width="1.5"/>
+        <line x1="40" y1="1" x2="40" y2="329" stroke="#2a241f" stroke-width="1.5"/>
+        <line x1="120" y1="1" x2="120" y2="329" stroke="#e6d9c6" stroke-width="1.5"/>
+        <text x="22" y="165" transform="rotate(-90 22 165)" text-anchor="middle" font-size="12" font-weight="600" fill="#2a241f">Studio (today)</text>
+        <g font-size="12" font-weight="600" fill="#2a241f" text-anchor="middle">
+          <text x="80" y="50">Foremen &amp;</text><text x="80" y="66">architects</text>
+          <text x="80" y="161">Studio</text><text x="80" y="177">director</text>
+          <text x="80" y="279">Client</text>
+        </g>
+        <!-- lane 1 -->
+        <circle cx="160" cy="55" r="14" fill="#fff" stroke="#1f3a2e" stroke-width="2"/>
+        <line x1="174" y1="55" x2="198" y2="55" stroke="#2a241f" stroke-width="1.5" marker-end="url(#a1)"/>
+        <rect x="200" y="25" width="200" height="60" rx="10" fill="#fff" stroke="#2a241f" stroke-width="1.5"/>
+        <text x="300" y="51" text-anchor="middle" font-size="12" fill="#2a241f"><tspan x="300">Post voice notes and photos</tspan><tspan x="300" dy="16">to 30+ WhatsApp groups</tspan></text>
+        <!-- A to B -->
+        <path d="M400,55 H415 V165 H428" fill="none" stroke="#2a241f" stroke-width="1.5" marker-end="url(#a1)"/>
+        <!-- lane 2 -->
+        <rect x="430" y="135" width="180" height="60" rx="10" fill="#fff" stroke="#2a241f" stroke-width="1.5"/>
+        <text x="520" y="161" text-anchor="middle" font-size="12" fill="#2a241f"><tspan x="520">Scroll the groups and</tspan><tspan x="520" dy="16">filter by hand</tspan></text>
+        <line x1="610" y1="165" x2="636" y2="165" stroke="#2a241f" stroke-width="1.5" marker-end="url(#a1)"/>
+        <polygon points="660,143 682,165 660,187 638,165" fill="#fff" stroke="#2a241f" stroke-width="1.5"/>
+        <path d="M652,157 L668,173 M668,157 L652,173" stroke="#2a241f" stroke-width="2"/>
+        <text x="660" y="204" text-anchor="middle" font-size="11" fill="#6e6257">Found in time?</text>
+        <path d="M682,165 H697 V138 H718" fill="none" stroke="#2a241f" stroke-width="1.5" marker-end="url(#a1)"/>
+        <text x="700" y="131" font-size="11" fill="#6e6257">yes</text>
+        <path d="M682,165 H697 V192 H718" fill="none" stroke="#2a241f" stroke-width="1.5" marker-end="url(#a1)"/>
+        <text x="701" y="187" font-size="11" fill="#6e6257">no</text>
+        <rect x="720" y="118" width="180" height="40" rx="10" fill="#fff" stroke="#2a241f" stroke-width="1.5"/>
+        <text x="810" y="142" text-anchor="middle" font-size="12" fill="#2a241f">Update the client by hand</text>
+        <rect x="720" y="172" width="180" height="40" rx="10" fill="#fff" stroke="#b5562f" stroke-width="1.5"/>
+        <text x="810" y="190" text-anchor="middle" font-size="12" fill="#2a241f"><tspan x="810">Issue found late:</tspan><tspan x="810" dy="14">rework and delay</tspan></text>
+        <line x1="900" y1="138" x2="926" y2="138" stroke="#2a241f" stroke-width="1.5" marker-end="url(#a1)"/>
+        <circle cx="940" cy="138" r="12" fill="#fff" stroke="#2a241f" stroke-width="4"/>
+        <line x1="900" y1="192" x2="926" y2="192" stroke="#2a241f" stroke-width="1.5" marker-end="url(#a1)"/>
+        <circle cx="940" cy="192" r="12" fill="#fff" stroke="#b5562f" stroke-width="4"/>
+        <!-- lane 3 -->
+        <rect x="200" y="245" width="200" height="60" rx="10" fill="#fff" stroke="#2a241f" stroke-width="1.5"/>
+        <text x="300" y="271" text-anchor="middle" font-size="12" fill="#2a241f"><tspan x="300">Ask questions and approve</tspan><tspan x="300" dy="16">changes in the client group</tspan></text>
+        <path d="M400,275 H520 V197" fill="none" stroke="#6e6257" stroke-width="1.5" stroke-dasharray="6 4" marker-end="url(#a1m)"/>
+        <text x="528" y="232" font-size="11" fill="#6e6257">mixed into chat history</text>
+        <!-- annotation -->
+        <path d="M580,250 H570 V305 H580" fill="none" stroke="#6e6257" stroke-width="1.5"/>
+        <text x="586" y="270" font-size="12" fill="#2a241f"><tspan x="586">No single record of what was</tspan><tspan x="586" dy="16">approved, changed or decided</tspan></text>
+      </svg>
+      </div>
+      <figcaption>As-is process in BPMN notation: lanes show who does what; the diamond is a decision; dashed lines are information that is hard to find.</figcaption>
+    </figure>
+
+    <h2>4. My first design, and what the stakeholders taught me</h2>
+    <p>Version one was app-first. Foremen and architects would record voice notes in a mobile web app, AI would turn each one into a structured report, and the studio partners would follow every project from a dashboard. It worked in testing.</p>
+    <p>Then the studio director pushed back. Foremen work for the builder, not the studio, and other people involved would not install or open a new app. WhatsApp was how they already worked, and asking them to change would kill adoption. What the director wanted from the dashboard was reporting, reminders and a WhatsApp integration, not a new place for people to type.</p>
+    <div class="compare">
+      <div class="box"><h3>Version one: app-first</h3><ul><li>Foremen log in and record in the app</li><li>Partners manage everything in the dashboard</li><li>Adoption depends on everyone changing habits</li></ul></div>
+      <div class="box tip"><h3>Version two: WhatsApp-first</h3><ul><li>Site teams and clients keep using WhatsApp</li><li>An assistant number sits in each project group and reads along</li><li>The dashboard is the reporting and control layer</li></ul></div>
+    </div>
+    <p><b>The lesson:</b> design around the behaviour people already have. A feature nobody uses moves no metric.</p>
+
+    <h2>5. The redesigned process (to-be)</h2>
+    <figure class="diagram">
+      <div class="scroll">
+      <svg viewBox="0 0 960 360" role="img" aria-labelledby="tobe-title tobe-desc">
+        <title id="tobe-title">To-be process</title>
+        <desc id="tobe-desc">Site teams and clients keep working in their project WhatsApp groups. An assistant number inside each group reads every message, stores it raw, transcribes audio and filters the noise. If something is unclear, it asks the director one question; otherwise it files reports, tasks and problems by project. The dashboard flags open issues, projects without a recent report and invoices, and drafts reminders. The director approves each draft, and the person gets a private reminder on WhatsApp.</desc>
+        <defs>
+          <marker id="a2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2a241f"/></marker>
+          <marker id="a2m" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6e6257"/></marker>
+        </defs>
+        <rect x="1" y="1" width="958" height="358" rx="10" fill="#fbf7f0" stroke="#2a241f" stroke-width="1.5"/>
+        <line x1="40" y1="120" x2="959" y2="120" stroke="#e6d9c6" stroke-width="1.5"/>
+        <line x1="40" y1="240" x2="959" y2="240" stroke="#e6d9c6" stroke-width="1.5"/>
+        <line x1="40" y1="1" x2="40" y2="359" stroke="#2a241f" stroke-width="1.5"/>
+        <line x1="120" y1="1" x2="120" y2="359" stroke="#e6d9c6" stroke-width="1.5"/>
+        <text x="22" y="180" transform="rotate(-90 22 180)" text-anchor="middle" font-size="12" font-weight="600" fill="#2a241f">Studio with ArquiApp</text>
+        <g font-size="12" font-weight="600" fill="#2a241f" text-anchor="middle">
+          <text x="80" y="47">Site teams</text><text x="80" y="63">&amp; clients</text><text x="80" y="79" font-weight="400" fill="#6e6257">(WhatsApp)</text>
+          <text x="80" y="176">Studio</text><text x="80" y="192">director</text>
+          <text x="80" y="282">AI assistant</text><text x="80" y="298">&amp; dashboard</text><text x="80" y="314" font-size="10.5" font-weight="400" fill="#6e6257">(in each group)</text>
+        </g>
+        <!-- lane 1 -->
+        <circle cx="160" cy="60" r="14" fill="#fff" stroke="#1f3a2e" stroke-width="2"/>
+        <line x1="174" y1="60" x2="198" y2="60" stroke="#2a241f" stroke-width="1.5" marker-end="url(#a2)"/>
+        <rect x="200" y="30" width="180" height="60" rx="10" fill="#fff" stroke="#2a241f" stroke-width="1.5"/>
+        <text x="290" y="56" text-anchor="middle" font-size="12" fill="#2a241f"><tspan x="290">Keep posting in their</tspan><tspan x="290" dy="16">project WhatsApp groups</tspan></text>
+        <line x1="290" y1="90" x2="290" y2="256" stroke="#2a241f" stroke-width="1.5" marker-end="url(#a2)"/>
+        <rect x="740" y="30" width="170" height="60" rx="10" fill="#fff" stroke="#2a241f" stroke-width="1.5"/>
+        <text x="825" y="56" text-anchor="middle" font-size="12" fill="#2a241f"><tspan x="825">Get a private reminder</tspan><tspan x="825" dy="16">and reply</tspan></text>
+        <line x1="910" y1="60" x2="926" y2="60" stroke="#2a241f" stroke-width="1.5" marker-end="url(#a2)"/>
+        <circle cx="940" cy="60" r="12" fill="#fff" stroke="#2a241f" stroke-width="4"/>
+        <!-- lane 2 -->
+        <rect x="400" y="150" width="170" height="60" rx="10" fill="#fff" stroke="#2a241f" stroke-width="1.5"/>
+        <text x="485" y="176" text-anchor="middle" font-size="12" fill="#2a241f"><tspan x="485">Answer the assistant</tspan><tspan x="485" dy="16">when it is unsure</tspan></text>
+        <line x1="550" y1="210" x2="550" y2="268" stroke="#2a241f" stroke-width="1.5" marker-end="url(#a2)"/>
+        <rect x="640" y="150" width="170" height="60" rx="10" fill="#fff" stroke="#1f3a2e" stroke-width="1.5"/>
+        <text x="725" y="176" text-anchor="middle" font-size="12" fill="#2a241f"><tspan x="725">Approve each draft:</tspan><tspan x="725" dy="16">1 send · 2 edit · 3 skip</tspan></text>
+        <path d="M810,180 H825 V92" fill="none" stroke="#2a241f" stroke-width="1.5" marker-end="url(#a2)"/>
+        <!-- lane 3 -->
+        <rect x="200" y="258" width="180" height="84" rx="10" fill="#fff" stroke="#2a241f" stroke-width="1.5"/>
+        <text x="290" y="280" text-anchor="middle" font-size="12" fill="#2a241f"><tspan x="290">Read every group message,</tspan><tspan x="290" dy="16">store it raw, transcribe</tspan><tspan x="290" dy="16">audio and filter out</tspan><tspan x="290" dy="16">the noise</tspan></text>
+        <line x1="380" y1="300" x2="390" y2="300" stroke="#2a241f" stroke-width="1.5" marker-end="url(#a2)"/>
+        <polygon points="410,280 430,300 410,320 390,300" fill="#fff" stroke="#2a241f" stroke-width="1.5"/>
+        <path d="M403,293 L417,307 M417,293 L403,307" stroke="#2a241f" stroke-width="2"/>
+        <text x="410" y="337" text-anchor="middle" font-size="11" fill="#6e6257">Clear?</text>
+        <path d="M410,280 V212" fill="none" stroke="#6e6257" stroke-width="1.5" stroke-dasharray="6 4" marker-end="url(#a2m)"/>
+        <text x="417" y="250" font-size="11" fill="#6e6257"><tspan x="417">no: asks the director</tspan><tspan x="417" dy="14">one question</tspan></text>
+        <line x1="430" y1="300" x2="448" y2="300" stroke="#2a241f" stroke-width="1.5" marker-end="url(#a2)"/>
+        <text x="431" y="292" font-size="11" fill="#6e6257">yes</text>
+        <rect x="450" y="270" width="160" height="60" rx="10" fill="#fff" stroke="#2a241f" stroke-width="1.5"/>
+        <text x="530" y="296" text-anchor="middle" font-size="12" fill="#2a241f"><tspan x="530">File reports, tasks and</tspan><tspan x="530" dy="16">problems by project</tspan></text>
+        <line x1="610" y1="300" x2="628" y2="300" stroke="#2a241f" stroke-width="1.5" marker-end="url(#a2)"/>
+        <rect x="630" y="258" width="190" height="84" rx="10" fill="#fff" stroke="#1f3a2e" stroke-width="1.5"/>
+        <text x="725" y="280" text-anchor="middle" font-size="12" fill="#2a241f"><tspan x="725">Dashboard flags open issues,</tspan><tspan x="725" dy="16">projects without a recent</tspan><tspan x="725" dy="16">report and invoices; drafts</tspan><tspan x="725" dy="16">reminders</tspan></text>
+        <line x1="725" y1="258" x2="725" y2="212" stroke="#2a241f" stroke-width="1.5" marker-end="url(#a2)"/>
+      </svg>
+      </div>
+      <figcaption>To-be process: nothing changes for people on site. The assistant listens in the groups and does the sorting, and nothing is sent without the director's approval.</figcaption>
+    </figure>
+    <p>Three design rules came straight from the stakeholder conversations:</p>
+    <ul>
+      <li><b>Raw first.</b> Every message is stored exactly as it arrived, so it can be reprocessed when the AI improves and it doubles as the record for disputes.</li>
+      <li><b>One question at a time.</b> When the assistant is unsure which project a message belongs to, it asks the director a single question with numbered options.</li>
+      <li><b>Nothing goes out unapproved.</b> Every reminder is a draft until the director replies 1, 2 or 3. During testing, the assistant can only message an approved list of numbers.</li>
+    </ul>
+
+    <h2>6. User stories and acceptance criteria</h2>
+    <div class="story">
+      <h3>1. Capture what happens in the groups</h3>
+      <p class="as">As the studio director, I want the assistant to read each project's WhatsApp groups so that updates land in the right project as structured reports, without anyone forwarding anything.</p>
+      <ul>
+        <li><span class="gwt">GIVEN</span> a foreman posts a voice note in a project group, <span class="gwt">WHEN</span> it is processed, <span class="gwt">THEN</span> a report appears under that project with work done, problems, missing items, next steps, and approvals or changes.</li>
+        <li><span class="gwt">GIVEN</span> a message is unclear, <span class="gwt">WHEN</span> the assistant processes it, <span class="gwt">THEN</span> it asks me one question with numbered options and waits for the answer.</li>
+      </ul>
+    </div>
+    <div class="story">
+      <h3>2. Spot silent projects</h3>
+      <p class="as">As the studio director, I want to see which projects have gone quiet so that I can follow up before small issues grow.</p>
+      <ul>
+        <li><span class="gwt">GIVEN</span> an active project without a report in the last three working days, <span class="gwt">WHEN</span> I open the dashboard, <span class="gwt">THEN</span> it is flagged as "no report for X days".</li>
+        <li><span class="gwt">GIVEN</span> the end of each day, <span class="gwt">WHEN</span> the daily job runs, <span class="gwt">THEN</span> the success metric is calculated and stored.</li>
+      </ul>
+    </div>
+    <div class="story">
+      <h3>3. Approve every reminder</h3>
+      <p class="as">As the studio director, I want to approve reminders before they are sent so that nothing goes to my team or clients without my say.</p>
+      <ul>
+        <li><span class="gwt">GIVEN</span> a drafted reminder, <span class="gwt">WHEN</span> I reply 1, 2 or 3, <span class="gwt">THEN</span> it is sent, sent back for a new text, or dropped.</li>
+        <li><span class="gwt">GIVEN</span> test mode is on, <span class="gwt">WHEN</span> a message targets a number outside the approved list, <span class="gwt">THEN</span> it is blocked and logged.</li>
+      </ul>
+    </div>
+    <div class="story">
+      <h3>4. Chase client decisions</h3>
+      <p class="as">As the studio director, I want clients to be reminded about pending decisions so that work does not stall waiting for them.</p>
+      <ul>
+        <li><span class="gwt">GIVEN</span> a client decision is still pending, <span class="gwt">WHEN</span> three working days pass, <span class="gwt">THEN</span> a reminder is drafted for my approval.</li>
+        <li><span class="gwt">GIVEN</span> a topic has already had three reminders, <span class="gwt">WHEN</span> it is still pending, <span class="gwt">THEN</span> no further reminders are drafted.</li>
+      </ul>
+    </div>
+    <div class="story">
+      <h3>5. Start the day with a summary</h3>
+      <p class="as">As the studio director, I want a short morning summary on WhatsApp so that I know what needs attention without opening every group.</p>
+      <ul>
+        <li><span class="gwt">GIVEN</span> it is morning on a working day, <span class="gwt">WHEN</span> the summary job runs, <span class="gwt">THEN</span> I receive overdue tasks, client items pending for days, and items to review.</li>
+      </ul>
+    </div>
+
+    <h2>7. Where it stands</h2>
+    <p>The app is being piloted with the studio: reports, the project dashboard and invoice tracking run in production, and the WhatsApp assistant is in testing. The next step is the one that matters: tracking the success metric for four weeks against the 40% baseline.</p>
+
+    <div class="box center">
+      <h2>See the rest of my work</h2>
+      <p><a href="/work">All projects →</a></p>
+    </div>
+  </div>
+</article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Nicolás Martelli · Perth, WA</span>
+    <span><a href="https://www.instagram.com/nicolas.martelli/">Instagram</a><a href="https://www.linkedin.com/in/nicolasmartelli/">LinkedIn</a><a href="https://github.com/Martita91">GitHub</a></span>
+  </div>
+</footer>
+<script src="/assets/js/main.js" defer></script>
+</body>
+</html>

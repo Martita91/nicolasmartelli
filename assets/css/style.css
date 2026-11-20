@@ -133,9 +133,15 @@ main { counter-reset: case; }
 .case .meta h2 { font-size: clamp(1.6rem, 2.6vw, 2.1rem); overflow-wrap: anywhere; margin-bottom: .2em; }
 .case .meta strong { display: block; color: var(--muted); font-weight: 600; font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; margin-top: 12px; }
 .case > div:last-child { padding-top: 1.9rem; }
+.case > div:last-child:has(> .shot) { padding-top: 0; }
 .case > div:last-child > p:first-child { font-size: 1.12rem; margin-top: 0; }
 .case ul { margin: 0 0 4px; }
+.shot { margin: 0 0 22px; border-radius: 14px; overflow: hidden; border: 1px solid var(--sand); background: #e9dfcf; }
+.shot img { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; }
+.shot.phone { display: flex; justify-content: center; background: #1d1a17; padding: 22px 0; }
+.shot.phone img { width: auto; height: 380px; aspect-ratio: auto; border-radius: 10px; }
 .case .live { margin: 18px 0 0; font-weight: 500; }
+.case .live + .live { margin-top: 8px; }
 .case .live a { text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 1px; }
 .case .note { display: block; color: var(--muted); font-size: .85rem; font-weight: 400; margin-top: 4px; }
 .case li { margin: .45em 0; }
