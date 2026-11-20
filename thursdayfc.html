@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thursday F.C. project · Nicolás Martelli</title>
+<meta name="description" content="Thursday F.C. runs a weekly football group: attendance, position-balanced teams, results, player stats and paid match entry with Stripe.">
+<meta property="og:title" content="Thursday F.C.: the app that runs my weekly football group · Nicolás Martelli">
+<meta property="og:description" content="Attendance, position-balanced teams, results, stats and Stripe payments for a weekly social football group.">
+<meta property="og:image" content="https://nicolasmartelli.pages.dev/assets/img/work/thursdayfc/home.webp">
+<meta property="og:url" content="https://nicolasmartelli.pages.dev/thursdayfc">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Nicolás Martelli">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://nicolasmartelli.pages.dev/thursdayfc">
+<meta name="theme-color" content="#f4ede2">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261120d">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "Thursday F.C.: the app that runs my weekly football group", "description": "Attendance, position-balanced teams, results, stats and Stripe payments for a weekly social football group.", "image": "https://nicolasmartelli.pages.dev/assets/img/work/thursdayfc/home.webp", "datePublished": "2026-11-20", "dateModified": "2026-11-20", "mainEntityOfPage": "https://nicolasmartelli.pages.dev/thursdayfc", "author": {"@type": "Person", "name": "Nicolás Martelli", "url": "https://nicolasmartelli.pages.dev/about"}}
+</script>
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/">Nicolás Martelli<span>.</span></a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav">
+      <a href="/">Home</a>
+      <a href="/work" aria-current="page">Work</a>
+      <a href="/blog">Blog</a>
+      <a href="/about">About</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<article class="article">
+  <div class="wrap narrow">
+    <p class="eyebrow">Project · Community and payments</p>
+    <h1>Thursday F.C.: the app that runs my weekly football group</h1>
+    <p class="lead">From "who's playing?" to balanced teams, results, stats and paid match entry, in one mobile web app the group opens every week.</p>
+    <p class="byline">By Nicolás Martelli · 4 min read</p>
+
+    <div class="box">
+      <h2>At a glance</h2>
+      <dl class="facts">
+        <dt>What</dt><dd>A mobile web app for a weekly social football group in Perth</dd>
+        <dt>My role</dt><dd>Product and build</dd>
+        <dt>Stack</dt><dd>React, TanStack Start, Tailwind, Supabase (auth, Postgres, realtime), Stripe Checkout, Vercel</dd>
+        <dt>Status</dt><dd>Live at thursdayfc.au, with every match since the app started recorded in it</dd>
+      </dl>
+    </div>
+
+    <h2>1. A group chat is a bad spreadsheet</h2>
+    <p>Every week the same questions came up in the chat: who is in, are the teams fair, what was the score last time, and who still owes for the pitch. Thursday F.C. answers all of them in one place, on the phone, in a couple of taps.</p>
+    <div class="phones">
+      <figure class="screen"><img src="/assets/img/work/thursdayfc/home.webp" alt="Home screen with the next match, recent results and the points table" width="440" height="903" loading="lazy"><figcaption>Home: next match, recent results and the table.</figcaption></figure>
+      <figure class="screen"><img src="/assets/img/work/thursdayfc/build.webp" alt="Build the teams screen with the roster of confirmed and unconfirmed players" width="440" height="903" loading="lazy"><figcaption>Managers build the teams from who confirmed.</figcaption></figure>
+      <figure class="screen"><img src="/assets/img/work/thursdayfc/match.webp" alt="Match page with the score, man of the match and the line-up" width="440" height="903" loading="lazy"><figcaption>Every match: score, man of the match and line-ups.</figcaption></figure>
+    </div>
+
+    <h2>2. What it does</h2>
+    <ul>
+      <li><b>Attendance:</b> players tap PLAY to confirm, and the roster fills itself.</li>
+      <li><b>Balanced teams:</b> one tap splits the confirmed players into two even teams (more on how below).</li>
+      <li><b>Results:</b> each match keeps the score, the scorers, the man of the match and both line-ups.</li>
+      <li><b>Stats and rankings:</b> points, goals, MVPs, win rate and caps, by month or year. Each player has a profile with the positions they play, their best teammates and their toughest opponents.</li>
+      <li><b>Payments:</b> match entry is paid through Stripe Checkout inside the app, so nobody chases cash.</li>
+    </ul>
+    <div class="phones">
+      <figure class="screen"><img src="/assets/img/work/thursdayfc/ranks.webp" alt="Rankings table with points, games played, wins, draws and losses" width="440" height="903" loading="lazy"><figcaption>Rankings by points, goals, MVP, win rate or caps.</figcaption></figure>
+      <figure class="screen"><img src="/assets/img/work/thursdayfc/player.webp" alt="Player profile with caps, goals, win rate, positions played and best teammates" width="440" height="903" loading="lazy"><figcaption>Player profiles keep the banter honest.</figcaption></figure>
+      <figure class="screen"><img src="/assets/img/work/thursdayfc/results.webp" alt="List of all recorded games with dates and scores" width="440" height="903" loading="lazy"><figcaption>Every game the group has recorded.</figcaption></figure>
+    </div>
+
+    <h2>3. How the teams are balanced</h2>
+    <p>Balancing by skill alone sounds fair, but it can put three keepers on one side. So the algorithm is <b>position first</b>: it generates many candidate splits, keeps the ones with the most even spread of goalkeepers, defenders, midfielders and forwards, and only then uses skill to break ties. Skill is each player's win rate, pulled towards 50% when they have played only a few games, so one lucky night does not make anyone a star.</p>
+    <p>Among the best splits it picks one at random. That is on purpose: re-shuffling gives a different line-up each time without breaking the balance.</p>
+
+    <h2>4. How it is built</h2>
+    <ul>
+      <li><b>One shared club record:</b> players, matches and settings live in a single row in Supabase. Changes save after a short pause and sync live to every open phone, with a guard so a phone does not overwrite itself with its own echo.</li>
+      <li><b>Managers by login:</b> only signed-in managers can build the teams, checked against their login email, not against whichever player profile they pick.</li>
+      <li><b>Careful payments:</b> test and live Stripe modes are chosen by the key itself, and a missing key stops the app instead of defaulting to live. The payment webhook is verified with a signature, and amounts and transaction details never leave the server.</li>
+    </ul>
+
+    <h2>5. See it</h2>
+    <p>The home page, results and rankings are public. Confirming, building teams and paying need a player account.</p>
+    <p class="live"><a href="https://thursdayfc.au/">Visit thursdayfc.au →</a></p>
+
+    <div class="box center">
+      <h2>See the rest of my work</h2>
+      <p><a href="/work">All projects →</a></p>
+    </div>
+  </div>
+</article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Nicolás Martelli · Perth, WA</span>
+    <span><a href="https://www.instagram.com/nicolas.martelli/">Instagram</a><a href="https://www.linkedin.com/in/nicolasmartelli/">LinkedIn</a><a href="https://github.com/Martita91">GitHub</a></span>
+  </div>
+</footer>
+<script src="/assets/js/main.js" defer></script>
+</body>
+</html>

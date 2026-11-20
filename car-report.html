@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Car Report project · Nicolás Martelli</title>
+<meta name="description" content="Car Report turns used-car listings into a market report and a price calculator for any make and model, with a tested pricing model.">
+<meta property="og:title" content="Car Report: what a used car should really cost · Nicolás Martelli">
+<meta property="og:description" content="Used-car market reports, a price calculator and model comparisons, built on a pricing model tested on listings it has not seen.">
+<meta property="og:image" content="https://nicolasmartelli.pages.dev/assets/img/work/car-report/calculator.webp">
+<meta property="og:url" content="https://nicolasmartelli.pages.dev/car-report">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Nicolás Martelli">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://nicolasmartelli.pages.dev/car-report">
+<meta name="theme-color" content="#f4ede2">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261120d">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "Car Report: what a used car should really cost", "description": "Used-car market reports, a price calculator and model comparisons, built on a pricing model tested on listings it has not seen.", "image": "https://nicolasmartelli.pages.dev/assets/img/work/car-report/calculator.webp", "datePublished": "2026-11-20", "dateModified": "2026-11-20", "mainEntityOfPage": "https://nicolasmartelli.pages.dev/car-report", "author": {"@type": "Person", "name": "Nicolás Martelli", "url": "https://nicolasmartelli.pages.dev/about"}}
+</script>
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/">Nicolás Martelli<span>.</span></a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="nav">Menu</button>
+    <nav class="nav" id="nav">
+      <a href="/">Home</a>
+      <a href="/work" aria-current="page">Work</a>
+      <a href="/blog">Blog</a>
+      <a href="/about">About</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<article class="article">
+  <div class="wrap narrow">
+    <p class="eyebrow">Project · Market analytics</p>
+    <h1>Car Report: what a used car should really cost</h1>
+    <p class="lead">Feed it the listings for any make and model and it produces a market report and an interactive price calculator, in English or Spanish. KerbsideCars, the live version, compares models side by side.</p>
+    <p class="byline">By Nicolás Martelli · 4 min read</p>
+
+    <div class="box">
+      <h2>At a glance</h2>
+      <dl class="facts">
+        <dt>What</dt><dd>Used-car price reports and a calculator for any make and model in Australia</dd>
+        <dt>My role</dt><dd>Data analysis and build</dd>
+        <dt>Stack</dt><dd>Python, pandas, scikit-learn, SQLite, matplotlib, ReportLab (PDF), static HTML and JavaScript</dd>
+        <dt>Status</dt><dd>Working tool with a live demo, KerbsideCars</dd>
+      </dl>
+    </div>
+
+    <h2>1. Is this price fair?</h2>
+    <p>Online asking prices for the same car can differ by thousands of dollars, and it is hard to tell a bargain from a bad buy. Car Report turns a few hundred listings into a clear answer: what a car like yours typically sells for, what drives the price, and which listings are worth a look.</p>
+    <figure class="screen wide">
+      <img src="/assets/img/work/car-report/calculator.webp" alt="KerbsideCars price calculator for a Hyundai Tucson with a typical asking price of $21,980" width="1200" height="750" loading="lazy">
+      <figcaption>The price calculator: set the year, kilometres and transmission, and see the typical asking price and its range.</figcaption>
+    </figure>
+
+    <h2>2. What it produces</h2>
+    <ul>
+      <li><b>A PDF report</b> in English or Spanish: a market summary, charts, what moves the price (year, kilometres, transmission, version) and the five best-value listings.</li>
+      <li><b>A price calculator</b> that opens with a double click, no server needed: your car against the market, the closest listings with links, and a forecast of its value over the next three years.</li>
+      <li><b>A market explorer</b> with filters, showing every listing and how far its price sits from the typical one.</li>
+      <li><b>KerbsideCars</b>, one page with Compare, Price calculator and Explore for every model with enough listings.</li>
+    </ul>
+    <div class="pair">
+      <figure class="screen"><img src="/assets/img/work/car-report/market-position.webp" alt="Chart of asking price against kilometres with the user's car and the five closest listings highlighted" width="1200" height="750" loading="lazy"><figcaption>Where your car sits, and the five listings most like it.</figcaption></figure>
+      <figure class="screen"><img src="/assets/img/work/car-report/explore.webp" alt="Market explorer with listing count, median price and a scatter chart of every listing" width="1200" height="750" loading="lazy"><figcaption>Every listing, with the gap to its typical price.</figcaption></figure>
+    </div>
+    <div class="pair">
+      <figure class="screen"><img src="/assets/img/work/kerbside.webp" alt="KerbsideCars comparing the Hyundai Tucson, Toyota RAV4 and Hyundai Kona" width="1200" height="750" loading="lazy"><figcaption>Compare up to three models for the same budget.</figcaption></figure>
+      <figure class="screen"><img src="/assets/img/work/car-report/pdf-report.webp" alt="PDF market report with a market snapshot, a quick read and a price versus kilometres chart" width="1200" height="750" loading="lazy"><figcaption>The PDF report, written for a buyer, not an analyst.</figcaption></figure>
+    </div>
+
+    <h2>3. The pricing model</h2>
+    <p>The typical price comes from a regression on the log of the price, using year, kilometres, transmission, keywords from the listing title (which carry the version) and, when given, the state. Working in logs means each extra year or 10,000 km costs a percentage of the price, not a fixed amount, which is how the market behaves.</p>
+    <p>Every model is tested on listings it has not seen, with cross-validation repeated over several splits, and the report states its typical error. For a common model it lands around 4%. The report is also clear about its limits: these are asking prices, not sale prices, and a version the title does not mention can throw a price off, so those listings are flagged.</p>
+
+    <h2>4. The data</h2>
+    <ul>
+      <li><b>Collection:</b> listings are gathered from Gumtree by a browser agent driven by Claude, slowly enough to respect the site's rate limits.</li>
+      <li><b>No personal data:</b> no seller names, phone numbers, addresses, plates or VINs are stored.</li>
+      <li><b>A history, not a snapshot:</b> each collection is added to a SQLite database with one row per listing per collection, so loading the same file twice never duplicates anything.</li>
+      <li><b>Respecting terms:</b> where a site allows links but not reuse of its data, the tool only links to it.</li>
+    </ul>
+
+    <h2>5. Try it</h2>
+    <p>KerbsideCars is the live version, built from real listings collected in Western Australia.</p>
+    <p class="live"><a href="https://claude.ai/artifact/2Gcrf8v9MyS9LBQBcjyrgG">Try KerbsideCars →</a></p>
+
+    <div class="box center">
+      <h2>See the rest of my work</h2>
+      <p><a href="/work">All projects →</a></p>
+    </div>
+  </div>
+</article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span>© 2026 Nicolás Martelli · Perth, WA</span>
+    <span><a href="https://www.instagram.com/nicolas.martelli/">Instagram</a><a href="https://www.linkedin.com/in/nicolasmartelli/">LinkedIn</a><a href="https://github.com/Martita91">GitHub</a></span>
+  </div>
+</footer>
+<script src="/assets/js/main.js" defer></script>
+</body>
+</html>

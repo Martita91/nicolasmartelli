@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261120b">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261120d">
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "CollectionPage", "name": "Projects by Nicolás Martelli", "url": "https://nicolasmartelli.pages.dev/work", "author": {"@type": "Person", "name": "Nicolás Martelli", "url": "https://nicolasmartelli.pages.dev/about"}, "mainEntity": {"@type": "ItemList", "itemListElement": [{"@type": "ListItem", "position": 1, "item": {"@type": "CreativeWork", "name": "Housenancials", "description": "A household financial plan in one place: objectives, net worth, monthly budget, and a 30-years-to-retirement investing projection.", "url": "https://nicolasmartelli.pages.dev/work#housenancials", "creator": {"@type": "Person", "name": "Nicolás Martelli", "url": "https://nicolasmartelli.pages.dev/about"}}}, {"@type": "ListItem", "position": 2, "item": {"@type": "CreativeWork", "name": "Car Report", "description": "Feed it the listings for any make and model and it produces a used-car market report, in English or Spanish.", "url": "https://nicolasmartelli.pages.dev/work#car-report", "creator": {"@type": "Person", "name": "Nicolás Martelli", "url": "https://nicolasmartelli.pages.dev/about"}}}, {"@type": "ListItem", "position": 3, "item": {"@type": "CreativeWork", "name": "Meeting Notes", "description": "Think Granola, but with no account and your notes in a folder you own. A Windows tray app that records your computer's audio and microphone, transcribes the meeting and writes a summary, decisions and action items as Markdown.", "url": "https://nicolasmartelli.pages.dev/work#meeting-notes", "creator": {"@type": "Person", "name": "Nicolás Martelli", "url": "https://nicolasmartelli.pages.dev/about"}}}, {"@type": "ListItem", "position": 4, "item": {"@type": "CreativeWork", "name": "Thursday F.C.", "description": "A web app that runs my weekly pickup football group, from \"who's playing?\" to paid match entry.", "url": "https://nicolasmartelli.pages.dev/work#thursdayfc", "creator": {"@type": "Person", "name": "Nicolás Martelli", "url": "https://nicolasmartelli.pages.dev/about"}}}, {"@type": "ListItem", "position": 5, "item": {"@type": "CreativeWork", "name": "Pilot Fatigue", "description": "A fatigue-risk tool for marine pilots. Before each shift, pilots log their sleep and roster, and a fatigue model predicts how tired they will be across the shift.", "url": "https://nicolasmartelli.pages.dev/work#pilot-fatigue", "creator": {"@type": "Person", "name": "Nicolás Martelli", "url": "https://nicolasmartelli.pages.dev/about"}}}, {"@type": "ListItem", "position": 6, "item": {"@type": "CreativeWork", "name": "Headlites", "description": "A website for a home hair and beauty studio in Wembley Downs, Perth, designed to turn visitors from Google into bookings.", "url": "https://nicolasmartelli.pages.dev/work#headlites", "creator": {"@type": "Person", "name": "Nicolás Martelli", "url": "https://nicolasmartelli.pages.dev/about"}}}, {"@type": "ListItem", "position": 7, "item": {"@type": "CreativeWork", "name": "Teleprompter", "description": "The teleprompter I use to record my reels. It runs in the browser and is fully private, with no backend, no accounts and no tracking.", "url": "https://nicolasmartelli.pages.dev/work#teleprompter", "creator": {"@type": "Person", "name": "Nicolás Martelli", "url": "https://nicolasmartelli.pages.dev/about"}}}, {"@type": "ListItem", "position": 8, "item": {"@type": "CreativeWork", "name": "ArquiApp", "description": "Project tracking for an architecture studio in Argentina and Uruguay. Foremen and architects record voice notes from the building site, and the app turns them into structured reports on a dashboard.", "url": "https://nicolasmartelli.pages.dev/work#arquiapp", "creator": {"@type": "Person", "name": "Nicolás Martelli", "url": "https://nicolasmartelli.pages.dev/about"}}}, {"@type": "ListItem", "position": 9, "item": {"@type": "CreativeWork", "name": "otiumsociety.com", "description": "The website for Otium Society, an architecture, interiors and objects studio in Perth. It has services, a booking flow, a shop waitlist and contact forms.", "url": "https://nicolasmartelli.pages.dev/work#otium", "creator": {"@type": "Person", "name": "Nicolás Martelli", "url": "https://nicolasmartelli.pages.dev/about"}}}, {"@type": "ListItem", "position": 10, "item": {"@type": "WebApplication", "name": "Web Audit", "description": "A free tool that audits any website for SEO, AI visibility, accessibility and best practices.", "url": "https://nicolasmartelli.pages.dev/audit", "creator": {"@type": "Person", "name": "Nicolás Martelli", "url": "https://nicolasmartelli.pages.dev/about"}}}]}}
 </script>
@@ -50,9 +50,11 @@
 <section class="tight-top">
   <div class="wrap">
     <article class="case" id="housenancials">
-      <div class="meta"><p class="eyebrow">Personal finance</p><h2>Housenancials</h2>
+      <div class="meta"><p class="eyebrow">Personal finance</p><h2><a href="/housenancials">Housenancials</a></h2>
         <strong>Stack</strong>React, Vite, Tailwind, Supabase (auth + data), Vercel, Claude API
-        <strong>Role</strong>Product, design and build</div>
+        <strong>Role</strong>Product, design and build
+        <p class="live"><a href="/housenancials">View project →</a></p>
+        <p class="live"><a href="https://housenancials.vercel.app/">Try the live app →</a></p></div>
       <div>
         <figure class="shot"><a href="/housenancials" aria-label="View the Housenancials project"><img src="/assets/img/work/housenancials/overview.webp" alt="Housenancials overview with net worth, budget split, objectives and retirement projection" width="1200" height="750" loading="lazy"></a></figure>
         <p>A household financial plan in one place: objectives, net worth, monthly budget, and a 30-years-to-retirement investing projection.</p>
@@ -61,16 +63,16 @@
           <li><b>Security by design:</b> every user's data is isolated with Supabase Row Level Security; the API key never reaches the browser.</li>
           <li><b>Finance logic first:</b> projections are calculated in code, and the AI only explains them.</li>
         </ul>
-        <p class="live"><a href="/housenancials">View project →</a></p>
-        <p class="live"><a href="https://housenancials.vercel.app/">Try the live app →</a></p>
       </div>
     </article>
     <article class="case" id="thursdayfc">
-      <div class="meta"><p class="eyebrow">Community · payments</p><h2>Thursday F.C.</h2>
+      <div class="meta"><p class="eyebrow">Community · payments</p><h2><a href="/thursdayfc">Thursday F.C.</a></h2>
         <strong>Stack</strong>React, TanStack Start, Supabase, Stripe, Vercel
-        <strong>Role</strong>Product and build</div>
+        <strong>Role</strong>Product and build
+        <p class="live"><a href="/thursdayfc">View project →</a></p>
+        <p class="live"><a href="https://thursdayfc.au/">Visit thursdayfc.au →</a></p></div>
       <div>
-        <figure class="shot phone"><img src="/assets/img/work/thursdayfc.webp" alt="Thursday F.C. home screen with next match, recent results and points table" width="440" height="900" loading="lazy"></figure>
+        <figure class="shot phone"><a href="/thursdayfc" aria-label="View the Thursday F.C. project"><img src="/assets/img/work/thursdayfc.webp" alt="Thursday F.C. home screen with next match, recent results and points table" width="440" height="900" loading="lazy"></a></figure>
         <p>A web app that runs my weekly pickup football group, from "who's playing?" to paid match entry.</p>
         <ul>
           <li><b>Attendance:</b> players confirm with one tap, and the list fills itself.</li>
@@ -78,43 +80,45 @@
           <li><b>Stats and leaderboards:</b> results, player stats and recent form, to keep the banter going.</li>
           <li><b>Payments:</b> match entry is paid through Stripe, so no more chasing cash.</li>
         </ul>
-        <p class="live"><a href="https://thursdayfc.au/">Visit thursdayfc.au →</a></p>
       </div>
     </article>
     <article class="case" id="arquiapp">
-      <div class="meta"><p class="eyebrow">Construction ops</p><h2>ArquiApp</h2>
+      <div class="meta"><p class="eyebrow">Construction ops</p><h2><a href="/arquiapp-case-study">ArquiApp</a></h2>
         <strong>Stack</strong>Next.js, Supabase (Postgres, Auth, Storage, cron), Vercel, Claude, speech-to-text
-        <strong>Role</strong>Product and full-stack build</div>
+        <strong>Role</strong>Product and full-stack build
+        <p class="live"><a href="/arquiapp-case-study">View project →</a></p>
+        <p class="live"><a href="https://arqui-app-lyart.vercel.app/app">See the app →</a> <span class="note">Login required, built for a client studio.</span></p></div>
       <div>
+        <figure class="shot"><a href="/arquiapp-case-study" aria-label="View the ArquiApp project"><img src="/assets/img/work/arquiapp/panel.webp" alt="ArquiApp dashboard with invented demo data: overdue tasks, invoices to pay and projects flagged by days without a report" width="1200" height="750" loading="lazy"></a></figure>
         <p>Project tracking for an architecture studio in Argentina and Uruguay. Foremen and architects record voice notes from the building site, and the app turns them into structured reports on a dashboard.</p>
         <ul>
           <li><b>Voice in, report out:</b> audio is transcribed, then Claude organises it into progress, issues and next steps.</li>
           <li><b>Tested AI:</b> an evaluation set checks the AI output before each change ships.</li>
           <li><b>In production:</b> it runs on Vercel, with automated tests and database migrations.</li>
         </ul>
-        <p class="live"><a href="/arquiapp-case-study">View project →</a></p>
-        <p class="live"><a href="https://arqui-app-lyart.vercel.app/app">See the app →</a> <span class="note">Login required, built for a client studio.</span></p>
       </div>
     </article>
     <article class="case" id="car-report">
-      <div class="meta"><p class="eyebrow">Market analytics</p><h2>Car Report</h2>
+      <div class="meta"><p class="eyebrow">Market analytics</p><h2><a href="/car-report">Car Report</a></h2>
         <strong>Stack</strong>Python, pandas, charts, PDF generation, static HTML
-        <strong>Role</strong>Data analysis and build</div>
+        <strong>Role</strong>Data analysis and build
+        <p class="live"><a href="/car-report">View project →</a></p>
+        <p class="live"><a href="https://claude.ai/artifact/2Gcrf8v9MyS9LBQBcjyrgG">Try KerbsideCars, the live version →</a></p></div>
       <div>
-        <figure class="shot"><img src="/assets/img/work/kerbside.webp" alt="KerbsideCars comparing Hyundai Tucson, Toyota RAV4 and Hyundai Kona prices" width="1200" height="750" loading="lazy"></figure>
+        <figure class="shot"><a href="/car-report" aria-label="View the Car Report project"><img src="/assets/img/work/kerbside.webp" alt="KerbsideCars comparing Hyundai Tucson, Toyota RAV4 and Hyundai Kona prices" width="1200" height="750" loading="lazy"></a></figure>
         <p>Feed it the listings for any make and model and it produces a used-car market report, in English or Spanish.</p>
         <ul>
           <li><b>PDF report:</b> summary, charts, what drives price (year, km, transmission, trim) and the five best-value listings.</li>
           <li><b>Interactive price calculator:</b> see where a specific car sits against the market, with comparable listings and filters. Opens with a double click, no server.</li>
           <li><b>Client-ready:</b> generates private, expiring share links for buyers.</li>
         </ul>
-        <p class="live"><a href="https://claude.ai/artifact/2Gcrf8v9MyS9LBQBcjyrgG">Try KerbsideCars, the live version →</a></p>
       </div>
     </article>
     <article class="case" id="pilot-fatigue">
       <div class="meta"><p class="eyebrow">Safety · risk</p><h2>Pilot Fatigue</h2>
         <strong>Stack</strong>JavaScript, Chart.js, Claude Artifacts with a shared database
-        <strong>Role</strong>Product and build (MVP)</div>
+        <strong>Role</strong>Product and build (MVP)
+        <p class="live"><a href="https://claude.ai/artifact/JcTwUbXjDYCfwYqpmRDT7t">View the demo →</a></p></div>
       <div>
         <figure class="shot"><img src="/assets/img/work/pilot.webp" alt="Pilot Fatigue supervisor dashboard with fatigue trend chart and heatmap" width="1200" height="750" loading="lazy"></figure>
         <p>A fatigue-risk tool for marine pilots. Before each shift, pilots log their sleep and roster, and a fatigue model predicts how tired they will be across the shift.</p>
@@ -123,7 +127,6 @@
           <li><b>Supervisor dashboard:</b> fleet KPIs, a heatmap of peaks by pilot and day, and the incident reports.</li>
           <li><b>Alerts:</b> low-sleep breaches, missing logs and escalation to the supervisor.</li>
         </ul>
-        <p class="live"><a href="https://claude.ai/artifact/JcTwUbXjDYCfwYqpmRDT7t">View the demo →</a></p>
       </div>
     </article>
     <article class="case" id="meeting-notes">
@@ -169,7 +172,8 @@
     <article class="case" id="otium">
       <div class="meta"><p class="eyebrow">Web · small business</p><h2>Otium Society</h2>
         <strong>Stack</strong>HTML, CSS, a little JavaScript, Cloudflare Pages
-        <strong>Role</strong>Design and build</div>
+        <strong>Role</strong>Design and build
+        <p class="live"><a href="https://otiumsociety.com">Visit otiumsociety.com →</a></p></div>
       <div>
         <figure class="shot"><img src="/assets/img/work/otium.webp" alt="Otium Society website home page" width="1200" height="750" loading="lazy"></figure>
         <p>The website for Otium Society, an architecture, interiors and objects studio in Perth. It has services, a booking flow, a shop waitlist and contact forms.</p>
@@ -178,13 +182,13 @@
           <li><b>Fast and free to host:</b> a static site on Cloudflare Pages that deploys automatically from GitHub.</li>
           <li>It is the same setup as this site.</li>
         </ul>
-        <p class="live"><a href="https://otiumsociety.com">Visit otiumsociety.com →</a></p>
       </div>
     </article>
     <article class="case" id="web-audit">
       <div class="meta"><p class="eyebrow">SEO · AI visibility</p><h2>Web Audit</h2>
         <strong>Stack</strong>HTML, CSS, JavaScript, Cloudflare Pages Functions
-        <strong>Role</strong>Product, design and build</div>
+        <strong>Role</strong>Product, design and build
+        <p class="live"><a href="/audit">Run a free audit →</a></p></div>
       <div>
         <figure class="shot"><img src="/assets/img/work/audit.webp" alt="Web Audit tool on this site" width="1200" height="750" loading="lazy"></figure>
         <p>A free tool on this site that audits any website. Enter an address and it scores SEO, AI visibility, accessibility and best practices, then lists what to fix first.</p>
@@ -193,7 +197,6 @@
           <li><b>Built for answer engines:</b> it checks whether AI crawlers are allowed, structured data, llms.txt and whether the content reads without JavaScript.</li>
           <li><b>Explains every point lost:</b> each check says what it found, on which pages, and how to fix it.</li>
         </ul>
-        <p class="live"><a href="/audit">Run a free audit →</a></p>
       </div>
     </article>
   </div>

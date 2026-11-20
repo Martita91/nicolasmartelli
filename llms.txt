@@ -13,6 +13,8 @@ Open to applied AI roles and projects in finance in Perth. Contact: https://www.
 - [Web Audit](https://nicolasmartelli.pages.dev/audit): Free tool that audits any website for SEO, AI visibility, accessibility and best practices.
 - [ArquiApp case study](https://nicolasmartelli.pages.dev/arquiapp-case-study): Business analysis case study: process maps, a stakeholder-driven redesign, user stories and a success metric for an architecture studio's site reporting.
 - [Housenancials project](https://nicolasmartelli.pages.dev/housenancials): Project page for a household financial plan app: screenshots, features, how Claude explains the figures while code does the maths, and security.
+- [Thursday F.C. project](https://nicolasmartelli.pages.dev/thursdayfc): Project page for a weekly football group app: attendance, position-balanced teams, results, player stats and Stripe payments.
+- [Car Report project](https://nicolasmartelli.pages.dev/car-report): Project page for used-car market reports and a price calculator, with a pricing model tested on unseen listings.
 
 ## Guides
 

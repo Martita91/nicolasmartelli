@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/style.css?v=20261120b">
+<link rel="stylesheet" href="/assets/css/style.css?v=20261120d">
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "Article", "headline": "ArquiApp: from 30 WhatsApp groups to one record", "description": "A business analysis case study: process maps, a stakeholder-driven redesign, user stories and a success metric for an architecture studio's site reporting.", "image": "https://nicolasmartelli.pages.dev/assets/img/nico.jpg", "datePublished": "2026-11-20", "dateModified": "2026-11-20", "mainEntityOfPage": "https://nicolasmartelli.pages.dev/arquiapp-case-study", "author": {"@type": "Person", "name": "Nicolás Martelli", "url": "https://nicolasmartelli.pages.dev/about"}}
 </script>
@@ -31,7 +31,7 @@
   .diagram { margin: 28px 0; background: var(--paper); border: 1px solid var(--sand); border-radius: var(--radius); padding: 16px; }
   .diagram .scroll { overflow-x: auto; }
   .diagram svg { display: block; min-width: 760px; width: 100%; height: auto; font-family: var(--sans); }
-  @media (min-width: 900px) { .diagram { --w: min(1000px, calc(100vw - 64px)); width: var(--w); margin-left: calc((100% - var(--w)) / 2); } }
+  @media (min-width: 900px) { .diagram { --w: min(1100px, calc(100vw - 64px)); width: var(--w); margin-left: calc((100% - var(--w)) / 2); } }
   .diagram figcaption { color: var(--muted); font-size: .9rem; margin-top: 10px; }
   .legend { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: .85rem; color: var(--muted); margin-top: 8px; }
   .story { background: var(--paper); border: 1px solid var(--sand); border-left: 4px solid var(--forest); border-radius: var(--radius); padding: 20px 24px; margin: 18px 0; }
@@ -67,7 +67,7 @@
     <p class="eyebrow">Case study · Business analysis</p>
     <h1>ArquiApp: from 30 WhatsApp groups to one record</h1>
     <p class="lead">An architecture studio was running site reporting through dozens of WhatsApp groups. I mapped how the work really flowed, listened when my first design missed the mark, and redesigned the process so nobody on site had to change how they work.</p>
-    <p class="byline">By Nicolás Martelli · 6 min read</p>
+    <p class="byline">By Nicolás Martelli · 7 min read</p>
 
     <div class="box">
       <h2>At a glance</h2>
@@ -269,7 +269,22 @@
       </ul>
     </div>
 
-    <h2>7. Where it stands</h2>
+    <h2>7. The app</h2>
+    <p>The dashboard is where the director starts the day: overdue tasks, what clients still owe a decision on, invoices to pay, and every active project with how long it has been since its last report. The screenshots below use invented demo data, so no real project, client or person appears.</p>
+    <figure class="screen wide">
+      <img src="/assets/img/work/arquiapp/panel.webp" alt="ArquiApp dashboard with overdue tasks, client pending items, invoices to pay and active projects flagged by days without a report" width="1200" height="750" loading="lazy">
+      <figcaption>The dashboard flags projects that have gone quiet, the success metric in action.</figcaption>
+    </figure>
+    <div class="pair">
+      <figure class="screen"><img src="/assets/img/work/arquiapp/site-report.webp" alt="A project's reports tab with a site report split into work done, next steps and approvals" width="1200" height="750" loading="lazy"><figcaption>A voice note becomes a report: work done, next steps, approvals and changes.</figcaption></figure>
+      <figure class="screen"><img src="/assets/img/work/arquiapp/finance.webp" alt="Finance view listing payments and invoices by project with their status" width="1200" height="750" loading="lazy"><figcaption>Payments and invoices by project, with what still needs checking.</figcaption></figure>
+    </div>
+    <div class="phones">
+      <figure class="screen"><img src="/assets/img/work/arquiapp/upload-phone.webp" alt="Phone screen for uploading a report, choosing whether it comes from the site team or the client" width="440" height="903" loading="lazy"><figcaption>Uploading a report from the phone.</figcaption></figure>
+      <figure class="screen"><img src="/assets/img/work/arquiapp/panel-phone.webp" alt="The dashboard on a phone" width="440" height="903" loading="lazy"><figcaption>The same dashboard on the go.</figcaption></figure>
+    </div>
+
+    <h2>8. Where it stands</h2>
     <p>The app is being piloted with the studio: reports, the project dashboard and invoice tracking run in production, and the WhatsApp assistant is in testing. The next step is the one that matters: tracking the success metric for four weeks against the 40% baseline.</p>
 
     <div class="box center">
